@@ -61,12 +61,17 @@ static unsigned char locktime[255][32];
 #define ID_GALRAWFNAV   4022    /* SBF message id: Galileo raw navigation page or frame */
 #define ID_GALRAWINAV   4023    /* SBF message id: Galileo raw navigation page or frame */
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define ID_GEORAWL1     4020    /* SBF message id: SBAS raw navigation page or frame */
 #define ID_GEORAWL5     4021    /* SBF message id: SBAS raw navigation page or frame */
 =======
 #define ID_GALRAWCNAV   4024    /* SBF message id: Galileo raw navigation page or frame */
 #define ID_GLORAWCA     4026    /* SBF message id: GLONASS raw navigation page or frame */
 >>>>>>> parent of 9d31fc7... Over all updates
+=======
+#define ID_GEORAWL1     4020    /* SBF message id: SBAS raw navigation page or frame */
+#define ID_GEORAWL5     4021    /* SBF message id: SBAS raw navigation page or frame */
+>>>>>>> parent of d7adefe... Merge pull request #189 from JensReimann/rtklib_2.4.3
 #define ID_COMPRAW      4047    /* SBF message id: Compass raw navigation page or frame */
 #define ID_QZSSL1CA     4066    /* SBF message id: QZSS raw navigation page or frame */
 #define ID_QZSSL2C      4067    /* SBF message id: QZSS raw navigation page or frame */
