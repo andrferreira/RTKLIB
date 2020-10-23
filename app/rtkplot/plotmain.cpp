@@ -184,10 +184,6 @@ __fastcall TPlot::TPlot(TComponent* Owner) : TForm(Owner)
     
     TLEData.n=TLEData.nmax=0;
     TLEData.data=NULL;
-    
-    // set current directory as commend search path
-    AnsiString cd=GetCurrentDir();
-    ::SetEnvironmentVariable("PATH",cd.c_str());
 }
 // callback on form-create --------------------------------------------------
 void __fastcall TPlot::FormCreate(TObject *Sender)
