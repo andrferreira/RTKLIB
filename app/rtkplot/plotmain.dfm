@@ -636,7 +636,7 @@ object Plot: TPlot
         OnDblClick = BtnSol2DblClick
       end
       object BtnFixHoriz: TSpeedButton
-        Left = 357
+        Left = 403
         Top = 0
         Width = 23
         Height = 25
@@ -889,7 +889,7 @@ object Plot: TPlot
         ExplicitLeft = 303
       end
       object BtnFixVert: TSpeedButton
-        Left = 380
+        Left = 426
         Top = 0
         Width = 23
         Height = 25
@@ -1039,7 +1039,7 @@ object Plot: TPlot
         ExplicitLeft = 473
       end
       object BtnFixCent: TSpeedButton
-        Left = 334
+        Left = 380
         Top = 0
         Width = 23
         Height = 25
@@ -1110,7 +1110,7 @@ object Plot: TPlot
         ExplicitLeft = 496
       end
       object BtnShowSkyplot: TSpeedButton
-        Left = 426
+        Left = 334
         Top = 0
         Width = 23
         Height = 25
@@ -1118,7 +1118,6 @@ object Plot: TPlot
         Align = alLeft
         AllowAllUp = True
         GroupIndex = 16
-        Down = True
         Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBtnText
@@ -1151,17 +1150,17 @@ object Plot: TPlot
         Spacing = 1
         Visible = False
         OnClick = BtnShowSkyplotClick
-        ExplicitLeft = 441
+        ExplicitLeft = 330
       end
       object BtnShowGrid: TSpeedButton
-        Left = 403
+        Left = 357
         Top = 0
         Width = 23
         Height = 25
         Hint = 'Show Grid'
         Align = alLeft
         AllowAllUp = True
-        GroupIndex = 17
+        GroupIndex = 16
         Down = True
         Flat = True
         Glyph.Data = {
@@ -1188,7 +1187,8 @@ object Plot: TPlot
         ShowHint = True
         Spacing = 1
         OnClick = BtnShowGridClick
-        ExplicitLeft = 443
+        ExplicitLeft = 354
+        ExplicitTop = 2
       end
       object Panel101: TPanel
         AlignWithMargins = True
@@ -1225,6 +1225,7 @@ object Plot: TPlot
           ParentFont = False
           TabOrder = 0
           OnChange = PlotTypeSChange
+          ExplicitTop = 0
         end
       end
       object Panel102: TPanel
@@ -1344,6 +1345,7 @@ object Plot: TPlot
             'PDOP'
             'HDOP'
             'VDOP')
+          ExplicitTop = 0
         end
         object FrqType: TComboBox
           AlignWithMargins = True
@@ -1374,6 +1376,7 @@ object Plot: TPlot
           Items.Strings = (
             'L1'
             'L2')
+          ExplicitTop = 0
         end
         object ObsType: TComboBox
           AlignWithMargins = True
@@ -1400,6 +1403,7 @@ object Plot: TPlot
           TabOrder = 2
           Visible = False
           OnChange = ObsTypeChange
+          ExplicitTop = 0
         end
         object ObsType2: TComboBox
           AlignWithMargins = True
@@ -1431,6 +1435,7 @@ object Plot: TPlot
           Items.Strings = (
             'L1'
             'L2')
+          ExplicitTop = 0
         end
         object QFlag: TComboBox
           AlignWithMargins = True
@@ -1464,6 +1469,7 @@ object Plot: TPlot
             'Q=4'
             'Q=5'
             'Q=6')
+          ExplicitTop = 0
         end
       end
       object Panel104: TPanel
@@ -1571,6 +1577,7 @@ object Plot: TPlot
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitLeft = 518
       object BtnAnimate: TSpeedButton
         Left = 2
         Top = 0
