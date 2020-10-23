@@ -4,8 +4,8 @@ object MainForm: TMainForm
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'STRSVR'
-  ClientHeight = 224
-  ClientWidth = 405
+  ClientHeight = 218
+  ClientWidth = 384
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,8 +21,8 @@ object MainForm: TMainForm
   object Panel3: TPanel
     Left = 0
     Top = 0
-    Width = 405
-    Height = 195
+    Width = 384
+    Height = 189
     Align = alTop
     BevelOuter = bvNone
     BorderWidth = 1
@@ -30,14 +30,14 @@ object MainForm: TMainForm
     object Panel1: TPanel
       Left = 1
       Top = 27
-      Width = 403
-      Height = 134
+      Width = 382
+      Height = 128
       Align = alTop
       BevelInner = bvRaised
       BevelOuter = bvLowered
       TabOrder = 0
       object Output3Bps: TLabel
-        Left = 335
+        Left = 308
         Top = 104
         Width = 57
         Height = 13
@@ -52,7 +52,7 @@ object MainForm: TMainForm
         ParentFont = False
       end
       object Output2Bps: TLabel
-        Left = 335
+        Left = 308
         Top = 81
         Width = 57
         Height = 13
@@ -67,7 +67,7 @@ object MainForm: TMainForm
         ParentFont = False
       end
       object Output1Bps: TLabel
-        Left = 335
+        Left = 308
         Top = 58
         Width = 57
         Height = 13
@@ -82,7 +82,7 @@ object MainForm: TMainForm
         ParentFont = False
       end
       object InputBps: TLabel
-        Left = 335
+        Left = 308
         Top = 24
         Width = 57
         Height = 13
@@ -137,7 +137,7 @@ object MainForm: TMainForm
         Caption = 'Opt'
       end
       object InputByte: TLabel
-        Left = 255
+        Left = 228
         Top = 24
         Width = 77
         Height = 13
@@ -152,14 +152,14 @@ object MainForm: TMainForm
         ParentFont = False
       end
       object Label6: TLabel
-        Left = 305
+        Left = 278
         Top = 4
         Width = 27
         Height = 13
         Caption = 'bytes'
       end
       object Label7: TLabel
-        Left = 375
+        Left = 348
         Top = 4
         Width = 17
         Height = 13
@@ -179,7 +179,7 @@ object MainForm: TMainForm
         ParentFont = False
       end
       object Output1Byte: TLabel
-        Left = 255
+        Left = 228
         Top = 58
         Width = 77
         Height = 13
@@ -194,7 +194,7 @@ object MainForm: TMainForm
         ParentFont = False
       end
       object Output2Byte: TLabel
-        Left = 255
+        Left = 228
         Top = 81
         Width = 77
         Height = 13
@@ -229,7 +229,7 @@ object MainForm: TMainForm
         ParentFont = False
       end
       object Output3Byte: TLabel
-        Left = 255
+        Left = 228
         Top = 104
         Width = 77
         Height = 13
@@ -251,8 +251,8 @@ object MainForm: TMainForm
         Caption = 'Cmd'
       end
       object Label2: TLabel
-        Left = 230
-        Top = 4
+        Left = 203
+        Top = 41
         Width = 25
         Height = 13
         Caption = 'Conv'
@@ -335,7 +335,7 @@ object MainForm: TMainForm
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 11
+        TabOrder = 9
         OnClick = BtnOutput2Click
       end
       object IndInput: TPanel
@@ -355,7 +355,7 @@ object MainForm: TMainForm
         Height = 21
         Style = csDropDownList
         ItemIndex = 0
-        TabOrder = 10
+        TabOrder = 8
         OnChange = Output2Change
         Items.Strings = (
           ''
@@ -383,7 +383,7 @@ object MainForm: TMainForm
         BevelInner = bvRaised
         BevelOuter = bvLowered
         ParentBackground = False
-        TabOrder = 9
+        TabOrder = 7
       end
       object Output3: TComboBox
         Left = 88
@@ -392,7 +392,7 @@ object MainForm: TMainForm
         Height = 21
         Style = csDropDownList
         ItemIndex = 0
-        TabOrder = 15
+        TabOrder = 11
         OnChange = Output3Change
         Items.Strings = (
           ''
@@ -414,7 +414,7 @@ object MainForm: TMainForm
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 16
+        TabOrder = 12
         OnClick = BtnOutput3Click
       end
       object IndOutput3: TPanel
@@ -425,7 +425,7 @@ object MainForm: TMainForm
         BevelInner = bvRaised
         BevelOuter = bvLowered
         ParentBackground = False
-        TabOrder = 14
+        TabOrder = 10
       end
       object BtnCmd: TButton
         Left = 204
@@ -443,24 +443,8 @@ object MainForm: TMainForm
         OnClick = BtnCmdClick
       end
       object BtnConv1: TButton
-        Left = 230
+        Left = 204
         Top = 53
-        Width = 25
-        Height = 23
-        Caption = '...'
-        Enabled = False
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -9
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 8
-        OnClick = BtnConv1Click
-      end
-      object BtnConv2: TButton
-        Left = 230
-        Top = 76
         Width = 25
         Height = 23
         Caption = '...'
@@ -472,10 +456,26 @@ object MainForm: TMainForm
         Font.Style = []
         ParentFont = False
         TabOrder = 13
+        OnClick = BtnConv1Click
+      end
+      object BtnConv2: TButton
+        Left = 204
+        Top = 76
+        Width = 25
+        Height = 23
+        Caption = '...'
+        Enabled = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -9
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 14
         OnClick = BtnConv2Click
       end
       object BtnConv3: TButton
-        Left = 230
+        Left = 204
         Top = 99
         Width = 25
         Height = 23
@@ -487,69 +487,23 @@ object MainForm: TMainForm
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 18
+        TabOrder = 15
         OnClick = BtnConv3Click
-      end
-      object BtnCmd1: TButton
-        Left = 204
-        Top = 53
-        Width = 25
-        Height = 23
-        Caption = '...'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -9
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 7
-        OnClick = BtnCmdClick
-      end
-      object BtnCmd2: TButton
-        Left = 204
-        Top = 76
-        Width = 25
-        Height = 23
-        Caption = '...'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -9
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 12
-        OnClick = BtnCmdClick
-      end
-      object BtnCmd3: TButton
-        Left = 204
-        Top = 99
-        Width = 25
-        Height = 23
-        Caption = '...'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -9
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 17
-        OnClick = BtnCmdClick
       end
     end
     object Panel4: TPanel
       Left = 1
-      Top = 168
-      Width = 403
+      Top = 162
+      Width = 382
       Height = 26
       Align = alClient
       BevelInner = bvRaised
       BevelOuter = bvLowered
       TabOrder = 1
-      ExplicitHeight = 27
       object Message: TLabel
         Left = 4
-        Top = 6
-        Width = 396
+        Top = 5
+        Width = 372
         Height = 13
         Alignment = taCenter
         AutoSize = False
@@ -564,10 +518,10 @@ object MainForm: TMainForm
         ParentFont = False
       end
       object BtnAbout: TSpeedButton
-        Left = 381
-        Top = 1
-        Width = 19
-        Height = 23
+        Left = 365
+        Top = 5
+        Width = 11
+        Height = 17
         Caption = '?'
         Flat = True
         Font.Charset = DEFAULT_CHARSET
@@ -579,10 +533,10 @@ object MainForm: TMainForm
         OnClick = BtnAboutClick
       end
       object BtnStrMon: TSpeedButton
-        Left = 1
-        Top = 1
-        Width = 23
-        Height = 23
+        Left = 4
+        Top = 4
+        Width = 17
+        Height = 17
         Hint = 'Stream Monitor'
         Flat = True
         Glyph.Data = {
@@ -610,10 +564,10 @@ object MainForm: TMainForm
         OnClick = BtnStrMonClick
       end
       object BtnTaskIcon: TSpeedButton
-        Left = 357
-        Top = 1
-        Width = 23
-        Height = 23
+        Left = 347
+        Top = 5
+        Width = 17
+        Height = 17
         Hint = 'Task Tray Icon'
         Flat = True
         Font.Charset = DEFAULT_CHARSET
@@ -649,28 +603,25 @@ object MainForm: TMainForm
     end
     object Progress: TProgressBar
       Left = 1
-      Top = 161
-      Width = 403
+      Top = 155
+      Width = 382
       Height = 7
       Align = alTop
       Smooth = True
       Step = 1
       TabOrder = 2
-      ExplicitTop = 155
-      ExplicitWidth = 382
     end
     object Panel2: TPanel
       Left = 1
       Top = 1
-      Width = 403
+      Width = 382
       Height = 26
       Align = alTop
       BevelInner = bvRaised
       BevelOuter = bvLowered
       TabOrder = 3
-      ExplicitWidth = 382
       object Label8: TLabel
-        Left = 223
+        Left = 197
         Top = 5
         Width = 81
         Height = 14
@@ -683,7 +634,7 @@ object MainForm: TMainForm
         ParentFont = False
       end
       object ConTime: TLabel
-        Left = 324
+        Left = 298
         Top = 5
         Width = 68
         Height = 14
@@ -713,8 +664,8 @@ object MainForm: TMainForm
   end
   object BtnStart: TBitBtn
     Left = 0
-    Top = 194
-    Width = 134
+    Top = 188
+    Width = 120
     Height = 29
     Caption = '&Start'
     Glyph.Data = {
@@ -742,8 +693,8 @@ object MainForm: TMainForm
   end
   object BtnStop: TBitBtn
     Left = 0
-    Top = 194
-    Width = 134
+    Top = 188
+    Width = 120
     Height = 29
     Caption = 'S&top'
     Glyph.Data = {
@@ -771,9 +722,9 @@ object MainForm: TMainForm
     OnClick = BtnStopClick
   end
   object BtnOpt: TBitBtn
-    Left = 136
-    Top = 194
-    Width = 132
+    Left = 132
+    Top = 188
+    Width = 120
     Height = 29
     Caption = '&Options...'
     Glyph.Data = {
@@ -800,9 +751,9 @@ object MainForm: TMainForm
     OnClick = BtnOptClick
   end
   object BtnExit: TBitBtn
-    Left = 270
-    Top = 194
-    Width = 134
+    Left = 262
+    Top = 188
+    Width = 120
     Height = 29
     Caption = 'E&xit'
     TabOrder = 4
@@ -811,18 +762,18 @@ object MainForm: TMainForm
   object Timer1: TTimer
     Interval = 50
     OnTimer = Timer1Timer
-    Left = 68
-    Top = 159
+    Left = 198
+    Top = 152
   end
   object Timer2: TTimer
     Interval = 100
     OnTimer = Timer2Timer
-    Left = 98
-    Top = 160
+    Left = 228
+    Top = 152
   end
   object PopupMenu: TPopupMenu
-    Left = 187
-    Top = 161
+    Left = 316
+    Top = 152
     object MenuExpand: TMenuItem
       Caption = 'E&xpand'
       OnClick = MenuExpandClick
@@ -897,14 +848,14 @@ object MainForm: TMainForm
     PopupMenu = PopupMenu
     OnDblClick = TrayIconDblClick
     OnMouseDown = TrayIconMouseDown
-    Left = 158
-    Top = 160
+    Left = 288
+    Top = 152
   end
   object ImageList: TImageList
-    Left = 128
-    Top = 161
+    Left = 258
+    Top = 152
     Bitmap = {
-      494C0101030004003C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000400380010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       000000000000000000000000000000000000C0C0C000C0C0C000C0C0C000C0C0
       C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0

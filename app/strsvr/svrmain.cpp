@@ -193,42 +193,33 @@ void __fastcall TMainForm::BtnInputClick(TObject *Sender)
         case 6: FtpOpt(0,1); break;
     }
 }
-// callback on button-cmd ---------------------------------------------------
+// callback on button-input-cmd ---------------------------------------------
 void __fastcall TMainForm::BtnCmdClick(TObject *Sender)
 {
-    TButton *btn[]={BtnCmd,BtnCmd1,BtnCmd2,BtnCmd3};
-    TComboBox *type[]={Input,Output1,Output2,Output3};
-    int i;
-    
-    for (i=0;i<4;i++) {
-        if (btn[i]==(TButton *)Sender) break;
-    }
-    if (i>=4) return;
-    
-    if (type[i]->Text=="Serial") {
-        CmdOptDialog->Cmds[0]=Cmds[i][0];
-        CmdOptDialog->Cmds[1]=Cmds[i][1];
-        CmdOptDialog->CmdEna[0]=CmdEna[i][0];
-        CmdOptDialog->CmdEna[1]=CmdEna[i][1];
+    if (Input->ItemIndex==0) {
+        CmdOptDialog->Cmds[0]=Cmds[0];
+        CmdOptDialog->Cmds[1]=Cmds[1];
+        CmdOptDialog->CmdEna[0]=CmdEna[0];
+        CmdOptDialog->CmdEna[1]=CmdEna[1];
     }
     else {
-        CmdOptDialog->Cmds[0]=CmdsTcp[i][0];
-        CmdOptDialog->Cmds[1]=CmdsTcp[i][1];
-        CmdOptDialog->CmdEna[0]=CmdEnaTcp[i][0];
-        CmdOptDialog->CmdEna[1]=CmdEnaTcp[i][1];
+        CmdOptDialog->Cmds[0]=CmdsTcp[0];
+        CmdOptDialog->Cmds[1]=CmdsTcp[1];
+        CmdOptDialog->CmdEna[0]=CmdEnaTcp[0];
+        CmdOptDialog->CmdEna[1]=CmdEnaTcp[1];
     }
     if (CmdOptDialog->ShowModal()!=mrOk) return;
-    if (type[i]->Text=="Serial") {
-        Cmds[i][0]  =CmdOptDialog->Cmds[0];
-        Cmds[i][1]  =CmdOptDialog->Cmds[1];
-        CmdEna[i][0]=CmdOptDialog->CmdEna[0];
-        CmdEna[i][1]=CmdOptDialog->CmdEna[1];
+    if (Input->ItemIndex==0) {
+        Cmds[0]  =CmdOptDialog->Cmds[0];
+        Cmds[1]  =CmdOptDialog->Cmds[1];
+        CmdEna[0]=CmdOptDialog->CmdEna[0];
+        CmdEna[1]=CmdOptDialog->CmdEna[1];
     }
     else {
-        CmdsTcp[i][0]  =CmdOptDialog->Cmds[0];
-        CmdsTcp[i][1]  =CmdOptDialog->Cmds[1];
-        CmdEnaTcp[i][0]=CmdOptDialog->CmdEna[0];
-        CmdEnaTcp[i][1]=CmdOptDialog->CmdEna[1];
+        CmdsTcp[0]  =CmdOptDialog->Cmds[0];
+        CmdsTcp[1]  =CmdOptDialog->Cmds[1];
+        CmdEnaTcp[0]=CmdOptDialog->CmdEna[0];
+        CmdEnaTcp[1]=CmdOptDialog->CmdEna[1];
     }
 }
 // callback on button-output1-opt -------------------------------------------
@@ -399,7 +390,7 @@ void __fastcall TMainForm::Output3Change(TObject *Sender)
 // callback on interval timer -----------------------------------------------
 void __fastcall TMainForm::Timer1Timer(TObject *Sender)
 {
-    TColor color[]={clRed,clBtnFace,CLORANGE,clGreen,clLime,clAqua};
+    TColor color[]={clRed,clBtnFace,CLORANGE,clGreen,clLime};
     TPanel *e0[]={IndInput,IndOutput1,IndOutput2,IndOutput3};
     TLabel *e1[]={InputByte,Output1Byte,Output2Byte,Output3Byte};
     TLabel *e2[]={InputBps,Output1Bps,Output2Bps,Output3Bps};
@@ -453,7 +444,7 @@ void __fastcall TMainForm::SvrStart(void)
         STR_NONE,STR_SERIAL,STR_TCPCLI,STR_TCPSVR,STR_NTRIPSVR,STR_FILE
     };
     int ip[]={0,1,1,1,2,3,3},strs[4]={0},opt[7]={0},n;
-    char *paths[4],*cmds[4]={0},filepath[1024],buff[1024];
+    char *paths[4],*cmd=NULL,filepath[1024],buff[1024];
     char *ant[3]={"","",""},*rcv[3]={"","",""},*p;
     FILE *fp;
     
@@ -473,13 +464,11 @@ void __fastcall TMainForm::SvrStart(void)
     strcpy(paths[2],!Output2->ItemIndex?"":Paths[2][ip[Output2->ItemIndex-1]].c_str());
     strcpy(paths[3],!Output3->ItemIndex?"":Paths[3][ip[Output3->ItemIndex-1]].c_str());
     
-    for (int i=0;i<4;i++) {
-        if (strs[i]==STR_SERIAL) {
-            if (CmdEna[i][0]) cmds[i]=MainForm->Cmds[i][0].c_str();
-        }
-        else if (strs[i]==STR_TCPCLI||strs[i]==STR_NTRIPCLI) {
-            if (CmdEnaTcp[i][0]) cmds[i]=MainForm->CmdsTcp[i][0].c_str();
-        }
+    if (Input->ItemIndex==0) {
+        if (CmdEna[0]) cmd=MainForm->Cmds[0].c_str();
+    }
+    else if (Input->ItemIndex==1||Input->ItemIndex==3) {
+        if (CmdEnaTcp[0]) cmd=MainForm->CmdsTcp[0].c_str();
     }
     for (int i=0;i<5;i++) {
         opt[i]=SvrOpt[i];
@@ -518,7 +507,7 @@ void __fastcall TMainForm::SvrStart(void)
         matcpy(conv[i]->out.sta.del,AntOff,3,1);
     }
     // stream server start
-    if (!strsvrstart(&strsvr,opt,strs,paths,conv,cmds,AntPos)) return;
+    if (!strsvrstart(&strsvr,opt,strs,paths,conv,cmd,AntPos)) return;
     
     StartTime=utc2gpst(timeget());
     Panel1    ->Enabled=false;
@@ -534,29 +523,15 @@ void __fastcall TMainForm::SvrStart(void)
 // stop stream server -------------------------------------------------------
 void __fastcall TMainForm::SvrStop(void)
 {
-    int itype[]={
-        STR_SERIAL,STR_TCPCLI,STR_TCPSVR,STR_NTRIPCLI,STR_FILE,STR_FTP,STR_HTTP
-    };
-    int otype[]={
-        STR_NONE,STR_SERIAL,STR_TCPCLI,STR_TCPSVR,STR_NTRIPSVR,STR_FILE
-    };
-    char *cmds[4]={0};
-    int strs[4];
+    char *cmd=NULL;
     
-    strs[0]=itype[Input->ItemIndex];
-    strs[1]=otype[Output1->ItemIndex];
-    strs[2]=otype[Output2->ItemIndex];
-    strs[3]=otype[Output3->ItemIndex];
-    
-    for (int i=0;i<4;i++) {
-        if (strs[i]==STR_SERIAL) {
-            if (CmdEna[i][1]) cmds[i]=MainForm->Cmds[i][1].c_str();
-        }
-        else if (strs[i]==STR_TCPCLI||strs[i]==STR_NTRIPCLI) {
-            if (CmdEnaTcp[i][1]) cmds[i]=MainForm->CmdsTcp[i][1].c_str();
-        }
+    if (Input->ItemIndex==0) {
+        if (CmdEna[1]) cmd=Cmds[1].c_str();
     }
-    strsvrstop(&strsvr,cmds);
+    else if (Input->ItemIndex==1||Input->ItemIndex==3) {
+        if (CmdEnaTcp[1]) cmd=CmdsTcp[1].c_str();
+    }
+    strsvrstop(&strsvr,cmd);
     
     EndTime=utc2gpst(timeget());
     Panel1    ->Enabled=true;
@@ -647,9 +622,6 @@ void __fastcall TMainForm::UpdateEnable(void)
     BtnOutput1->Enabled=Output1->ItemIndex>0;
     BtnOutput2->Enabled=Output2->ItemIndex>0;
     BtnOutput3->Enabled=Output3->ItemIndex>0;
-    BtnCmd1   ->Enabled=BtnOutput1->Enabled&&(Output1->ItemIndex==1||Output1->ItemIndex==2);
-    BtnCmd2   ->Enabled=BtnOutput2->Enabled&&(Output2->ItemIndex==1||Output2->ItemIndex==2);
-    BtnCmd3   ->Enabled=BtnOutput3->Enabled&&(Output3->ItemIndex==1||Output3->ItemIndex==2);
     BtnConv1  ->Enabled=BtnOutput1->Enabled;
     BtnConv2  ->Enabled=BtnOutput2->Enabled;
     BtnConv3  ->Enabled=BtnOutput3->Enabled;
@@ -695,22 +667,22 @@ void __fastcall TMainForm::LoadOpt(void)
         ConvMsg[i]=ini->ReadString ("conv",s.sprintf("msg_%d",i),"");
         ConvOpt[i]=ini->ReadString ("conv",s.sprintf("opt_%d",i),"");
     }
-    for (int i=0;i<4;i++) for (int j=0;j<2;j++) {
-        CmdEna   [i][j]=ini->ReadInteger("serial",s.sprintf("cmdena_%d_%d",i,j),1);
-        CmdEnaTcp[i][j]=ini->ReadInteger("tcpip" ,s.sprintf("cmdena_%d_%d",i,j),1);
+    for (int i=0;i<2;i++) {
+        CmdEna   [i]=ini->ReadInteger("serial",s.sprintf("cmdena_%d",i),1);
+        CmdEnaTcp[i]=ini->ReadInteger("tcpip" ,s.sprintf("cmdena_%d",i),1);
     }
     for (int i=0;i<4;i++) for (int j=0;j<4;j++) {
         Paths[i][j]=ini->ReadString("path",s.sprintf("path_%d_%d",i,j),"");
     }
-    for (int i=0;i<4;i++) for (int j=0;j<2;j++) {
-        Cmds[i][j]=ini->ReadString("serial",s.sprintf("cmd_%d_%d",i,j),"");
-        for (char *p=Cmds[i][j].c_str();*p;p++) {
+    for (int i=0;i<2;i++) {
+        Cmds[i]=ini->ReadString("serial",s.sprintf("cmd_%d",i),"");
+        for (char *p=Cmds[i].c_str();*p;p++) {
             if ((p=strstr(p,"@@"))) strncpy(p,"\r\n",2); else break;
         }
     }
-    for (int i=0;i<4;i++) for (int j=0;j<2;j++) {
-        CmdsTcp[i][j]=ini->ReadString("tcpip",s.sprintf("cmd_%d_%d",i,j),"");
-        for (char *p=CmdsTcp[i][j].c_str();*p;p++) {
+    for (int i=0;i<2;i++) {
+        CmdsTcp[i]=ini->ReadString("tcpip",s.sprintf("cmd_%d",i),"");
+        for (char *p=CmdsTcp[i].c_str();*p;p++) {
             if ((p=strstr(p,"@@"))) strncpy(p,"\r\n",2); else break;
         }
     }
@@ -760,24 +732,24 @@ void __fastcall TMainForm::SaveOpt(void)
         ini->WriteString ("conv",s.sprintf("msg_%d",i),ConvMsg[i]);
         ini->WriteString ("conv",s.sprintf("opt_%d",i),ConvOpt[i]);
     }
-    for (int i=0;i<4;i++) for (int j=0;j<2;j++) {
-        ini->WriteInteger("serial",s.sprintf("cmdena_%d_%d",i,j),CmdEna   [i][j]);
-        ini->WriteInteger("tcpip" ,s.sprintf("cmdena_%d_%d",i,j),CmdEnaTcp[i][j]);
+    for (int i=0;i<2;i++) {
+        ini->WriteInteger("serial",s.sprintf("cmdena_%d",i),CmdEna   [i]);
+        ini->WriteInteger("tcpip" ,s.sprintf("cmdena_%d",i),CmdEnaTcp[i]);
     }
     for (int i=0;i<4;i++) for (int j=0;j<4;j++) {
         ini->WriteString("path",s.sprintf("path_%d_%d",i,j),Paths[i][j]);
     }
-    for (int i=0;i<4;i++) for (int j=0;j<2;j++) {
-        for (char *p=Cmds[i][j].c_str();*p;p++) {
+    for (int i=0;i<2;i++) {
+        for (char *p=Cmds[i].c_str();*p;p++) {
             if ((p=strstr(p,"\r\n"))) strncpy(p,"@@",2); else break;
         }
-        ini->WriteString("serial",s.sprintf("cmd_%d_%d",i,j),Cmds[i][j]);
+        ini->WriteString("serial",s.sprintf("cmd_%d",i),Cmds[i]);
     }
-    for (int i=0;i<4;i++) for (int j=0;j<2;j++) {
-        for (char *p=CmdsTcp[i][j].c_str();*p;p++) {
+    for (int i=0;i<2;i++) {
+        for (char *p=CmdsTcp[i].c_str();*p;p++) {
             if ((p=strstr(p,"\r\n"))) strncpy(p,"@@",2); else break;
         }
-        ini->WriteString("tcpip",s.sprintf("cmd_%d_%d",i,j),CmdsTcp[i][j]);
+        ini->WriteString("tcpip",s.sprintf("cmd_%d",i),CmdsTcp[i]);
     }
     for (int i=0;i<MAXHIST;i++) {
         ini->WriteString("tcpopt",s.sprintf("history%d",i),TcpOptDialog->History[i]);
