@@ -24,17 +24,16 @@ __published:
 	TSpeedButton *BtnExpand;
 	TSpeedButton *BtnShrink;
 	void __fastcall BtnCloseClick(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall BtnShrinkClick(TObject *Sender);
 	void __fastcall BtnExpandClick(TObject *Sender);
 	void __fastcall BtnFixCentClick(TObject *Sender);
 	void __fastcall FormResize(TObject *Sender);
-	void __fastcall FormShow(TObject *Sender);
-	void __fastcall FormCreate(TObject *Sender);
 
 
 private:
-	int State,WebCreate;
+	int State;
 	double Lat,Lon,Zoom;
 	double MarkPos[2][2];
 	
