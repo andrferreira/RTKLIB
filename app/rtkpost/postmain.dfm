@@ -51,9 +51,9 @@ object MainForm: TMainForm
       ParentFont = False
       TabOrder = 3
       object BtnAbout: TSpeedButton
-        Left = 445
+        Left = 443
         Top = 2
-        Width = 23
+        Width = 25
         Height = 21
         Align = alRight
         Caption = '?'
@@ -65,12 +65,14 @@ object MainForm: TMainForm
         Font.Style = []
         ParentFont = False
         OnClick = BtnAboutClick
-        ExplicitLeft = 443
+        ExplicitLeft = 439
+        ExplicitTop = 0
+        ExplicitHeight = 24
       end
       object BtnOutputView2: TSpeedButton
-        Left = 25
+        Left = 27
         Top = 2
-        Width = 23
+        Width = 25
         Height = 21
         Hint = 'Show Debug Trace'
         Align = alLeft
@@ -98,11 +100,14 @@ object MainForm: TMainForm
         ParentShowHint = False
         ShowHint = True
         OnClick = BtnOutputView2Click
+        ExplicitLeft = 25
+        ExplicitTop = 0
+        ExplicitHeight = 24
       end
       object BtnOutputView1: TSpeedButton
         Left = 2
         Top = 2
-        Width = 23
+        Width = 25
         Height = 21
         Hint = 'Show Stat File'
         Align = alLeft
@@ -130,6 +135,8 @@ object MainForm: TMainForm
         ParentShowHint = False
         ShowHint = True
         OnClick = BtnOutputView1Click
+        ExplicitTop = 0
+        ExplicitHeight = 24
       end
     end
     object Progress: TProgressBar

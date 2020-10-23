@@ -1,18 +1,16 @@
 //---------------------------------------------------------------------------
 // rtklaunch : rtklib ap launcher
 //
-//          Copyright (C) 2013-2016 by T.TAKASU, All rights reserved.
+//          Copyright (C) 2013 by T.TAKASU, All rights reserved.
 //
-// options : rtklib launcher [-t title][-tray][-mkl|-win64]
+// options : rtklib launcher [-t title][-tray]
 //
 //           -t title   window title
 //           -tray      start as task tray icon
 //           -mkl       use rtkpost_mkl and rtknavi_mkl
-//           -win64     use rtkpost_win64 and rtknavi_win64
 //
 // version : $Revision:$ $Date:$
 // history : 2013/01/10  1.1 new
-//           2016/09/03  1.2 add option -win64
 //---------------------------------------------------------------------------
 #include <vcl.h>
 #include <inifiles.hpp>
@@ -20,7 +18,6 @@
 
 #include "rtklib.h"
 #include "launchmain.h"
-#include "launchoptdlg.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -35,7 +32,6 @@ TMainForm *MainForm;
 __fastcall TMainForm::TMainForm(TComponent* Owner)
     : TForm(Owner)
 {
-    TIniFile *ini=new TIniFile(IniFile);
     char file[1024]="rtklaunch.exe",buff[1024],*argv[32],*p;
     int i,argc=0,tray=0;
     
@@ -43,14 +39,7 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
     if (!(p=strrchr(file,'.'))) p=file+strlen(file);
     strcpy(p,".ini");
     IniFile=file;
-    Option=0;
-    
-    Left  =ini->ReadInteger("pos","left",    0);
-    Top   =ini->ReadInteger("pos","top",     0);
-    Width =ini->ReadInteger("pos","width", 310);
-    Height=ini->ReadInteger("pos","height", 79);
-    Option=ini->ReadInteger("pos","option",  0);
-    delete ini;
+    Mkl=0;
     
     Caption="RTKLIB v." VER_RTKLIB " " PATCH_LEVEL;
     TrayIcon->Hint=Caption;
@@ -64,8 +53,7 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
     for (i=1;i<argc;i++) {
         if      (!strcmp(argv[i],"-t")&&i+1<argc) Caption=argv[++i];
         else if (!strcmp(argv[i],"-tray")) tray=1;
-        else if (!strcmp(argv[i],"-mkl")) Option=1;
-        else if (!strcmp(argv[i],"-win64")) Option=2;
+        else if (!strcmp(argv[i],"-mkl")) Mkl=1;
     }
     if (tray) {
         Application->ShowMainForm=false;
@@ -75,6 +63,12 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::FormShow(TObject *Sender)
 {
+    TIniFile *ini=new TIniFile(IniFile);
+    Left  =ini->ReadInteger("pos","left",    0);
+    Top   =ini->ReadInteger("pos","top",     0);
+    Width =ini->ReadInteger("pos","width", 310);
+    Height=ini->ReadInteger("pos","height", 79);
+    delete ini;
 }
 //---------------------------------------------------------------------------
 void __fastcall TMainForm::FormClose(TObject *Sender, TCloseAction &Action)
@@ -84,7 +78,6 @@ void __fastcall TMainForm::FormClose(TObject *Sender, TCloseAction &Action)
     ini->WriteInteger("pos","top",      Top);
     ini->WriteInteger("pos","width",  Width);
     ini->WriteInteger("pos","height",Height);
-    ini->WriteInteger("pos","option",Option);
     delete ini;
 }
 //---------------------------------------------------------------------------
@@ -113,11 +106,8 @@ void __fastcall TMainForm::BtnPostClick(TObject *Sender)
 {
     UnicodeString cmd1="rtkpost",cmd2="..\\..\\..\\bin\\rtkpost",opts="";
     
-    if (Option==1) {
+    if (Mkl) {
         cmd1=cmd1+"_mkl"; cmd2=cmd2+"_mkl";
-    }
-    else if (Option==2) {
-        cmd1=cmd1+"_win64"; cmd2=cmd2+"_win64";
     }
     if (!ExecCmd(cmd1+opts)) ExecCmd(cmd2+opts);
 }
@@ -133,11 +123,8 @@ void __fastcall TMainForm::BtnNaviClick(TObject *Sender)
 {
     UnicodeString cmd1="rtknavi",cmd2="..\\..\\..\\bin\\rtknavi",opts="";
     
-    if (Option==1) {
+    if (Mkl) {
         cmd1=cmd1+"_mkl"; cmd2=cmd2+"_mkl";
-    }
-    else if (Option==2) {
-        cmd1=cmd1+"_win64"; cmd2=cmd2+"_win64";
     }
     if (!ExecCmd(cmd1+opts)) ExecCmd(cmd2+opts);
 }
@@ -219,6 +206,7 @@ void __fastcall TMainForm::MenuExitClick(TObject *Sender)
     Close();
 }
 //---------------------------------------------------------------------------
+
 void __fastcall TMainForm::Panel1Resize(TObject *Sender)
 {
     TSpeedButton *btn[]={
@@ -240,14 +228,7 @@ void __fastcall TMainForm::Panel1Resize(TObject *Sender)
     }
     BtnTray->Left=Panel1->ClientWidth -BtnTray->Width;
     BtnTray->Top =Panel1->ClientHeight-BtnTray->Height;
-    BtnOption->Left=Panel1->ClientWidth -BtnOption->Width;
-    BtnOption->Top =0;
-}
-//---------------------------------------------------------------------------
 
-void __fastcall TMainForm::BtnOptionClick(TObject *Sender)
-{
-	if (LaunchOptDialog->ShowModal()!=mrOk) return;
 }
 //---------------------------------------------------------------------------
 

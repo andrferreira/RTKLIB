@@ -108,8 +108,7 @@ object OutputStrDialog: TOutputStrDialog
       'Serial'
       'TCP Client'
       'TCP Server'
-      'NTRIP Serve'
-      'NTRIP Caster'
+      'NTRIP Server'
       'File')
   end
   object BtnStr1: TButton
@@ -157,7 +156,6 @@ object OutputStrDialog: TOutputStrDialog
       'TCP Client'
       'TCP Server'
       'NTRIP Server'
-      'NTRIP Caster'
       'File')
   end
   object Format1: TComboBox

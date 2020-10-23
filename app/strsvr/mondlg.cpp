@@ -44,21 +44,22 @@ void __fastcall TStrMonDialog::BtnCloseClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TStrMonDialog::SelFmtChange(TObject *Sender)
 {
-	if (StrFmt-3==STRFMT_RTCM2||StrFmt-3==STRFMT_RTCM3) {
+	const char *msg="\n";
+	
+	if (StrFmt-2==STRFMT_RTCM2||StrFmt-2==STRFMT_RTCM3) {
 		free_rtcm(&rtcm);
 	}
-	else if (StrFmt>=3) {
+	else if (StrFmt>=2) {
 		free_raw(&raw);
 	}
 	StrFmt=SelFmt->ItemIndex;
-	ConBuff->Clear();
-	ConBuff->Add("");
+	AddConsole((unsigned char *)msg,1,1);
 	
-	if (StrFmt-3==STRFMT_RTCM2||StrFmt-3==STRFMT_RTCM3) {
+	if (StrFmt-2==STRFMT_RTCM2||StrFmt-2==STRFMT_RTCM3) {
 		init_rtcm(&rtcm);
 		rtcm.outtype=1;
 	}
-	else if (StrFmt>=3) {
+	else if (StrFmt>=2) {
 		init_raw(&raw,StrFmt-2);
 		raw.outtype=1;
 	}
@@ -71,7 +72,7 @@ void __fastcall TStrMonDialog::AddMsg(unsigned char *msg, int len)
 	
 	if (len<=0) return;
 	
-	else if (StrFmt-3==STRFMT_RTCM2) {
+	else if (StrFmt-2==STRFMT_RTCM2) {
 		for (i=0;i<len;i++) {
 			input_rtcm2(&rtcm,msg[i]);
 			if (rtcm.msgtype[0]) {
@@ -81,7 +82,7 @@ void __fastcall TStrMonDialog::AddMsg(unsigned char *msg, int len)
 			}
 	    }
 	}
-	else if (StrFmt-3==STRFMT_RTCM3) {
+	else if (StrFmt-2==STRFMT_RTCM3) {
 		for (i=0;i<len;i++) {
 			input_rtcm3(&rtcm,msg[i]);
 			if (rtcm.msgtype[0]) {
@@ -91,9 +92,9 @@ void __fastcall TStrMonDialog::AddMsg(unsigned char *msg, int len)
 			}
 	    }
 	}
-	else if (StrFmt>=3) { // raw
+	else if (StrFmt>=2) { // raw
 		for (i=0;i<len;i++) {
-			input_raw(&raw,StrFmt-3,msg[i]);
+			input_raw(&raw,StrFmt-2,msg[i]);
 			if (raw.msgtype[0]) {
 				n=sprintf(buff,"%s\n",raw.msgtype);
 				AddConsole((unsigned char *)buff,n,1);
@@ -101,13 +102,8 @@ void __fastcall TStrMonDialog::AddMsg(unsigned char *msg, int len)
 			}
 	    }
 	}
-	else if (StrFmt>=1) { // HEX/ASC
-		AddConsole(msg,len,StrFmt-1);
-	}
-	else { // Streams
-		ConBuff->Clear();
-		ConBuff->Add("");
-		AddConsole(msg,len,1);
+	else { // HEX/ASC
+		AddConsole(msg,len,StrFmt);
 	}
 }
 //---------------------------------------------------------------------------
@@ -157,8 +153,7 @@ void __fastcall TStrMonDialog::ConsolePaint(TObject *Sender)
 	
 	for (int i=p<0?0:p;i<ConBuff->Count;i++,y+=off.cy) {
 		if (y+off.cy>Console->Height-TOPMARGIN) break;
-		//c->Font->Color=i<n-1?clGray:clBlack;
-		c->Font->Color=clBlack;
+		c->Font->Color=i<n-1?clGray:clBlack;
 		c->TextOut(LEFTMARGIN,y,ConBuff->Strings[i]);
 	}
 	Scroll->Max=n<=m?m-1:n-m;

@@ -36,7 +36,6 @@ __published:
 	TMenuItem *MenuExpand;
 	TMenuItem *N2;
 	TPanel *Panel1;
-	TPanel *BtnOption;
 	
 	void __fastcall BtnPlotClick(TObject *Sender);
 	void __fastcall BtnConvClick(TObject *Sender);
@@ -59,15 +58,13 @@ __published:
 	void __fastcall MenuExitClick(TObject *Sender);
 	void __fastcall MenuExpandClick(TObject *Sender);
 	void __fastcall Panel1Resize(TObject *Sender);
-	void __fastcall BtnOptionClick(TObject *Sender);
 
 private:
 	AnsiString IniFile;
-	int Tray;
+	int Tray,Mkl;
 	
 	int __fastcall ExecCmd(AnsiString cmd);
 public:
-	int Option;
 	__fastcall TMainForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------

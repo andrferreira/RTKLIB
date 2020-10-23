@@ -35,13 +35,12 @@ __published:
 	void __fastcall SelFmtChange(TObject *Sender);
 private:
 	TStringList *ConBuff;
-	int Stop,ScrollPos;
+	int Stop,ScrollPos,StrFmt;
 	rtcm_t rtcm;
 	raw_t raw;
 	
 	void __fastcall AddConsole(unsigned char *msg, int len, int mode);
 public:
-	int StrFmt;
 	__fastcall TStrMonDialog(TComponent* Owner);
 	void __fastcall AddMsg(unsigned char *buff, int n);
 };
