@@ -13,6 +13,17 @@ object MainForm: TMainForm
   OnResize = FormResize
   OnShow = FormShow
   DesignerMasterStyle = 0
+  object Image: TImage
+    MultiResBitmap = <
+      item
+      end>
+    MarginWrapMode = Center
+    Size.Width = 100.000000000000000000
+    Size.Height = 100.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    WrapMode = Center
+  end
   object Timer1: TTimer
     Enabled = False
     Interval = 100
@@ -76,12 +87,11 @@ object MainForm: TMainForm
     Size.Height = 286.000000000000000000
     Size.PlatformDefault = False
     Stroke.Color = claWhite
-    object DispImage: TImage
+    object Disp: TImage
       MultiResBitmap = <
         item
         end>
       Align = Client
-      MarginWrapMode = Center
       Margins.Left = 1.000000000000000000
       Margins.Top = 1.000000000000000000
       Margins.Right = 1.000000000000000000
@@ -89,6 +99,24 @@ object MainForm: TMainForm
       Size.Width = 478.000000000000000000
       Size.Height = 284.000000000000000000
       Size.PlatformDefault = False
+    end
+    object Ind1: TRectangle
+      Fill.Color = xFF404040
+      Position.X = 10.000000000000000000
+      Position.Y = 250.000000000000000000
+      Size.Width = 8.000000000000000000
+      Size.Height = 10.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claYellow
+    end
+    object Ind2: TRectangle
+      Fill.Color = xFF404040
+      Position.X = 10.000000000000000000
+      Position.Y = 268.000000000000000000
+      Size.Width = 8.000000000000000000
+      Size.Height = 10.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claYellow
     end
   end
   object Message1: TLabel
@@ -137,32 +165,5 @@ object MainForm: TMainForm
     Size.PlatformDefault = False
     TextSettings.FontColor = claYellow
     TextSettings.HorzAlign = Trailing
-  end
-  object Ind1: TRectangle
-    Fill.Color = xFF404040
-    Position.X = 10.000000000000000000
-    Position.Y = 250.000000000000000000
-    Size.Width = 8.000000000000000000
-    Size.Height = 10.000000000000000000
-    Size.PlatformDefault = False
-    Stroke.Color = claYellow
-  end
-  object Ind2: TRectangle
-    Fill.Color = xFF404040
-    Position.X = 10.000000000000000000
-    Position.Y = 268.000000000000000000
-    Size.Width = 8.000000000000000000
-    Size.Height = 10.000000000000000000
-    Size.PlatformDefault = False
-    Stroke.Color = claYellow
-  end
-  object CapImage: TImage
-    MultiResBitmap = <
-      item
-      end>
-    Size.Width = 100.000000000000000000
-    Size.Height = 100.000000000000000000
-    Size.PlatformDefault = False
-    Visible = False
   end
 end

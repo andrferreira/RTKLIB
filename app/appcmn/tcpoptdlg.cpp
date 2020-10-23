@@ -32,8 +32,7 @@ void __fastcall TTcpOptDialog::FormShow(TObject *Sender)
 	const char *ti[]={"TCP Server Options ","TCP Client Options",
 					  "NTRIP Server Options","NTRIP Client Options",
 					  "NTRIP Caster Client Options",
-					  "NTRIP Caster Server Options", "UDP Server Options",
-					  "UDP Client Options"};
+					  "NTRIP Caster Server Options"};
 	strcpy(buff,Path.c_str());
 	
 	if (!(p=strchr(buff,'@'))) p=buff;
@@ -59,28 +58,33 @@ void __fastcall TTcpOptDialog::FormShow(TObject *Sender)
 	AnsiString Addr_Text=p,Port_Text=port,MntPnt_Text=mntpnt;
 	AnsiString User_Text=user,Passwd_Text=passwd,Str_Text=str;
 	AnsiString Space="";
-	LabelAddr->Caption=Opt>=2&&Opt<=5?"NTRIP Caster Host":"Server Address";
+	LabelAddr->Caption=Opt>=2?"NTRIP Caster Host":"TCP Server Address";
 	
-	Addr->Enabled=(Opt>=1&&Opt<=3)||Opt==7;
-	LabelAddr->Enabled=(Opt>=1&&Opt<=3)||Opt==7;
+	Addr->Enabled=Opt>=1&&Opt<=3;
+	LabelAddr->Enabled=Opt>=1&&Opt<=3;
+	//Addr->Text=Opt>=1&&Opt<=3?Addr_Text:Space;
 	Addr->Text=Addr_Text;
 	
 	Port->Text=Port_Text;
 	
 	MntPnt->Enabled=Opt>=2&&Opt<=4;
 	LabelMntPnt->Enabled=Opt>=2&&Opt<=4;
+	//MntPnt->Text=Opt>=2&&Opt<=4?MntPnt_Text:Space;
 	MntPnt->Text=MntPnt_Text;
 	
 	User->Enabled=Opt>=3&&Opt<=4;
 	LabelUser->Enabled=Opt>=3&&Opt<=4;
+	//User->Text=Opt>=3&&Opt<=4?User_Text:Space;
 	User->Text=User_Text;
 	
-	Passwd->Enabled=Opt>=2&&Opt<=5;
-	LabelPasswd->Enabled=Opt>=2&&Opt<=5;
+	Passwd->Enabled=Opt>=2;
+	LabelPasswd->Enabled=Opt>=2;
+	//Passwd->Text=Opt>=2?Passwd_Text:Space;
 	Passwd->Text=Passwd_Text;
 	
 	Str->Enabled=Opt==2;
 	LabelStr->Enabled=Opt==2;
+	//Str->Text=Opt==2?Str_Text:Space;
 	Str->Text=Str_Text;
 	
 	Caption=ti[Opt];
