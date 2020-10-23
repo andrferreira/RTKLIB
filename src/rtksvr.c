@@ -40,6 +40,8 @@
 *-----------------------------------------------------------------------------*/
 #include "rtklib.h"
 
+static const char rcsid[]="$Id:$";
+
 #define MIN_INT_RESET   30000   /* mininum interval of reset command (ms) */
 
 /* write solution header to output stream ------------------------------------*/
