@@ -563,7 +563,6 @@ public:
     AnsiString MapImageFile;
     AnsiString SkyImageFile;
     AnsiString RnxOpts;
-    AnsiString ApiKey;
     tle_t TLEData;
     gis_t Gis;
     
