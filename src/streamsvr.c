@@ -19,8 +19,6 @@
 *           2016/08/20 1.8  support api change of sendnmea()
 *           2016/09/03 1.9  support ntrip caster function
 *           2016/09/06 1.10 add api strsvrsetsrctbl()
-*           2016/09/17 1.11 add relay back function of output stream
-*                           fix bug on rtcm cyclic output of beidou ephemeris 
 *-----------------------------------------------------------------------------*/
 #include "rtklib.h"
 
@@ -251,8 +249,6 @@ static int nextsat(nav_t *nav, int sat, int msg)
         case 1044: sys=SYS_QZS; p1=MINPRNQZS; p2=MAXPRNQZS; break;
         case 1045:
         case 1046: sys=SYS_GAL; p1=MINPRNGAL; p2=MAXPRNGAL; break;
-        case   63:
-        case 1047: sys=SYS_CMP; p1=MINPRNCMP; p2=MAXPRNCMP; break;
         default: return 0;
     }
     if (satsys(sat,&p0)!=sys) return satno(sys,p1);
@@ -410,15 +406,10 @@ static void *strsvrthread(void *arg)
             }
             unlock(&svr->lock);
         }
+        /* read output streams and discard data */
         for (i=1;i<svr->nstr;i++) {
-            
-            /* read message from output stream */
-            while ((n=strread(svr->stream+i,buff,sizeof(buff)))>0) {
-                
-                /* relay back message from output stream to input stream */
-                if (i==svr->relayback) {
-                    strwrite(svr->stream,buff,n);
-                }
+            while (strread(svr->stream+i,buff,sizeof(buff))>0) {
+                ;
             }
         }
         /* write nmea messages to input stream */
@@ -454,7 +445,6 @@ extern void strsvrinit(strsvr_t *svr, int nout)
     svr->cycle=0;
     svr->buffsize=0;
     svr->nmeacycle=0;
-    svr->relayback=0;
     svr->npb=0;
     for (i=0;i<3;i++) svr->nmeapos[i]=0.0;
     svr->buff=svr->pbuf=NULL;
@@ -476,7 +466,6 @@ extern void strsvrinit(strsvr_t *svr, int nout)
 *              opts[4]= server cycle (ms)
 *              opts[5]= nmea request cycle (ms) (0:no)
 *              opts[6]= file swap margin (s)
-*              opts[7]= relay back of output stream (0:no)
 *          int    *strs     I   stream types (STR_???)
 *              strs[0]= input stream
 *              strs[1]= output stream 1
@@ -517,7 +506,6 @@ extern int strsvrstart(strsvr_t *svr, int *opts, int *strs, char **paths,
     svr->cycle=opts[4];
     svr->buffsize=opts[3]<4096?4096:opts[3]; /* >=4096byte */
     svr->nmeacycle=0<opts[5]&&opts[5]<1000?1000:opts[5]; /* >=1s */
-    svr->relayback=opts[7];
     for (i=0;i<3;i++) svr->nmeapos[i]=nmeapos?nmeapos[i]:0.0;
     
     for (i=0;i<svr->nstr-1;i++) svr->conv[i]=conv[i];

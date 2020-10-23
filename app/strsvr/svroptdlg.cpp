@@ -32,7 +32,6 @@ void __fastcall TSvrOptDialog::FormShow(TObject *Sender)
 	AvePeriodRate->Text=s.sprintf("%d",SvrOpt[2]);
 	SvrBuffSize->Text=s.sprintf("%d",SvrOpt[3]);
 	SvrCycle->Text=s.sprintf("%d",SvrOpt[4]);
-	RelayMsg->ItemIndex=RelayBack;
 	NmeaCycle->Text=s.sprintf("%d",SvrOpt[5]);
 	FileSwapMarginE->Text=s.sprintf("%d",FileSwapMargin);
 	if (norm(AntPos,3)>0.0) {
@@ -72,7 +71,6 @@ void __fastcall TSvrOptDialog::BtnOkClick(TObject *Sender)
 	SvrOpt[4]=SvrCycle->Text.ToInt();
 	SvrOpt[5]=NmeaCycle->Text.ToInt();
 	FileSwapMargin=FileSwapMarginE->Text.ToInt();
-	RelayBack=RelayMsg->ItemIndex;
 	pos[0]=str2dbl(AntPos1->Text)*D2R;
 	pos[1]=str2dbl(AntPos2->Text)*D2R;
 	pos[2]=str2dbl(AntPos3->Text);

@@ -33,7 +33,7 @@ object SvrOptDialog: TSvrOptDialog
   end
   object Label10: TLabel
     Left = 9
-    Top = 232
+    Top = 231
     Width = 90
     Height = 13
     Caption = 'HTTP/NTRIP Proxy'
@@ -47,21 +47,21 @@ object SvrOptDialog: TSvrOptDialog
   end
   object Label1: TLabel
     Left = 9
-    Top = 10
+    Top = 9
     Width = 90
     Height = 13
     Caption = 'Buffer Size (bytes)'
   end
   object Label2: TLabel
     Left = 9
-    Top = 32
+    Top = 31
     Width = 88
     Height = 13
     Caption = 'Server Cycle  (ms)'
   end
   object Label3: TLabel
     Left = 9
-    Top = 54
+    Top = 53
     Width = 104
     Height = 13
     Caption = 'Inactive Timeout (ms)'
@@ -75,7 +75,7 @@ object SvrOptDialog: TSvrOptDialog
   end
   object Label7: TLabel
     Left = 234
-    Top = 76
+    Top = 53
     Width = 82
     Height = 13
     Caption = 'Output Log Level'
@@ -117,17 +117,10 @@ object SvrOptDialog: TSvrOptDialog
   end
   object Label13: TLabel
     Left = 9
-    Top = 188
+    Top = 187
     Width = 65
     Height = 13
     Caption = 'Receiver Info'
-  end
-  object Label16: TLabel
-    Left = 234
-    Top = 54
-    Width = 77
-    Height = 13
-    Caption = 'Relay Messages'
   end
   object BtnOk: TButton
     Left = 232
@@ -190,12 +183,12 @@ object SvrOptDialog: TSvrOptDialog
   end
   object TraceLevelS: TComboBox
     Left = 340
-    Top = 73
+    Top = 51
     Width = 85
     Height = 21
     Style = csDropDownList
     ItemIndex = 0
-    TabOrder = 9
+    TabOrder = 8
     Text = 'None'
     Items.Strings = (
       'None'
@@ -210,7 +203,7 @@ object SvrOptDialog: TSvrOptDialog
     Top = 118
     Width = 97
     Height = 21
-    TabOrder = 15
+    TabOrder = 14
     Text = '0.000'
   end
   object AntPos1: TEdit
@@ -218,15 +211,15 @@ object SvrOptDialog: TSvrOptDialog
     Top = 118
     Width = 96
     Height = 21
-    TabOrder = 14
+    TabOrder = 13
     Text = '0.000'
   end
   object NmeaCycle: TEdit
     Left = 340
-    Top = 95
+    Top = 73
     Width = 85
     Height = 21
-    TabOrder = 11
+    TabOrder = 10
     Text = '0'
   end
   object AntPos3: TEdit
@@ -234,7 +227,7 @@ object SvrOptDialog: TSvrOptDialog
     Top = 118
     Width = 97
     Height = 21
-    TabOrder = 16
+    TabOrder = 15
     Text = '0.000'
   end
   object BtnPos: TButton
@@ -249,16 +242,16 @@ object SvrOptDialog: TSvrOptDialog
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 17
+    TabOrder = 16
     OnClick = BtnPosClick
   end
   object NmeaReqT: TCheckBox
     Left = 233
-    Top = 97
+    Top = 75
     Width = 100
     Height = 17
     Caption = 'NMEA Cycle (ms)'
-    TabOrder = 10
+    TabOrder = 9
     OnClick = NmeaReqTClick
   end
   object LocalDir: TEdit
@@ -266,7 +259,7 @@ object SvrOptDialog: TSvrOptDialog
     Top = 206
     Width = 292
     Height = 21
-    TabOrder = 23
+    TabOrder = 22
   end
   object BtnLocalDir: TButton
     Left = 401
@@ -280,7 +273,7 @@ object SvrOptDialog: TSvrOptDialog
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 24
+    TabOrder = 23
     OnClick = BtnLocalDirClick
   end
   object FileSwapMarginE: TEdit
@@ -296,28 +289,28 @@ object SvrOptDialog: TSvrOptDialog
     Top = 228
     Width = 317
     Height = 21
-    TabOrder = 25
+    TabOrder = 24
   end
   object AntInfo: TEdit
     Left = 108
     Top = 162
     Width = 317
     Height = 21
-    TabOrder = 21
+    TabOrder = 20
   end
   object RcvInfo: TEdit
     Left = 108
     Top = 184
     Width = 317
     Height = 21
-    TabOrder = 22
+    TabOrder = 21
   end
   object AntOff1: TEdit
     Left = 108
     Top = 140
     Width = 96
     Height = 21
-    TabOrder = 18
+    TabOrder = 17
     Text = '0.000'
   end
   object AntOff2: TEdit
@@ -325,7 +318,7 @@ object SvrOptDialog: TSvrOptDialog
     Top = 140
     Width = 97
     Height = 21
-    TabOrder = 19
+    TabOrder = 18
     Text = '0.000'
   end
   object AntOff3: TEdit
@@ -333,7 +326,7 @@ object SvrOptDialog: TSvrOptDialog
     Top = 140
     Width = 97
     Height = 21
-    TabOrder = 20
+    TabOrder = 19
     Text = '0.000'
   end
   object StationId: TEdit
@@ -341,7 +334,7 @@ object SvrOptDialog: TSvrOptDialog
     Top = 95
     Width = 85
     Height = 21
-    TabOrder = 13
+    TabOrder = 12
     Text = '1234'
   end
   object StaInfoSel: TCheckBox
@@ -350,7 +343,7 @@ object SvrOptDialog: TSvrOptDialog
     Width = 77
     Height = 17
     Caption = 'Station ID'
-    TabOrder = 12
+    TabOrder = 11
     OnClick = StaInfoSelClick
   end
   object SrcTblFileF: TEdit
@@ -358,7 +351,7 @@ object SvrOptDialog: TSvrOptDialog
     Top = 250
     Width = 292
     Height = 21
-    TabOrder = 26
+    TabOrder = 25
   end
   object BtnSrcTblFile: TButton
     Left = 401
@@ -372,7 +365,7 @@ object SvrOptDialog: TSvrOptDialog
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 27
+    TabOrder = 26
     OnClick = BtnSrcTblFileClick
   end
   object LogFileF: TEdit
@@ -380,7 +373,7 @@ object SvrOptDialog: TSvrOptDialog
     Top = 272
     Width = 292
     Height = 21
-    TabOrder = 28
+    TabOrder = 27
   end
   object BtnLogFile: TButton
     Left = 401
@@ -394,23 +387,8 @@ object SvrOptDialog: TSvrOptDialog
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 29
+    TabOrder = 28
     OnClick = BtnLogFileClick
-  end
-  object RelayMsg: TComboBox
-    Left = 340
-    Top = 51
-    Width = 85
-    Height = 21
-    Style = csDropDownList
-    ItemIndex = 0
-    TabOrder = 8
-    Text = 'None'
-    Items.Strings = (
-      'None'
-      '(1)  -> (0)'
-      '(2)  -> (0)'
-      '(3)  -> (0)')
   end
   object OpenDialog: TOpenDialog
     Filter = 'All (*.*)|*.*'

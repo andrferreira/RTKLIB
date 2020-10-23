@@ -3,8 +3,8 @@ object MainForm: TMainForm
   Top = 0
   BorderIcons = [biMinimize]
   Caption = 'RTKNAVI'
-  ClientHeight = 299
-  ClientWidth = 575
+  ClientHeight = 312
+  ClientWidth = 618
   Color = clWindow
   Constraints.MaxHeight = 1600
   Constraints.MaxWidth = 2400
@@ -24,8 +24,8 @@ object MainForm: TMainForm
     AlignWithMargins = True
     Left = 1
     Top = 51
-    Width = 575
-    Height = 189
+    Width = 618
+    Height = 200
     Margins.Left = 1
     Margins.Top = 1
     Margins.Right = 1
@@ -36,80 +36,87 @@ object MainForm: TMainForm
     ParentBackground = False
     TabOrder = 1
     object Splitter1: TSplitter
-      Left = 380
+      Left = 208
       Top = 0
       Width = 4
-      Height = 189
+      Height = 200
       Beveled = True
       Color = clWhite
       ParentColor = False
       ResizeStyle = rsUpdate
-      ExplicitLeft = 195
+      ExplicitLeft = 170
+      ExplicitTop = -1
       ExplicitHeight = 185
     end
     object Splitter2: TSplitter
-      Left = 384
+      Left = 412
       Top = 0
       Width = 4
-      Height = 189
+      Height = 200
       Beveled = True
       Color = clWhite
       ParentColor = False
       ResizeStyle = rsUpdate
+      ExplicitLeft = 385
+      ExplicitTop = -1
       ExplicitHeight = 185
     end
     object Splitter3: TSplitter
-      Left = 376
+      Left = 204
       Top = 0
       Width = 4
-      Height = 189
+      Height = 200
       Beveled = True
       Color = clWhite
       ParentColor = False
       ResizeStyle = rsUpdate
-      ExplicitLeft = 191
+      ExplicitLeft = 170
+      ExplicitTop = -1
       ExplicitHeight = 185
     end
     object Splitter4: TSplitter
-      Left = 187
+      Left = 200
       Top = 0
       Width = 4
-      Height = 189
+      Height = 200
       Beveled = True
       Color = clWhite
       ParentColor = False
       ResizeStyle = rsUpdate
+      ExplicitLeft = 170
+      ExplicitTop = -1
       ExplicitHeight = 185
     end
     object Panel21: TPanel
       Left = 0
       Top = 0
-      Width = 187
-      Height = 189
+      Width = 200
+      Height = 200
       Align = alLeft
       BevelOuter = bvNone
       Color = clWhite
+      Constraints.MaxHeight = 1000
+      Constraints.MaxWidth = 1200
+      Constraints.MinHeight = 185
+      Constraints.MinWidth = 200
       ParentBackground = False
       TabOrder = 0
       OnResize = Panel21Resize
-      ExplicitHeight = 207
+      ExplicitHeight = 202
       object Panel211: TPanel
         Left = 0
         Top = 17
-        Width = 187
-        Height = 154
+        Width = 200
+        Height = 167
         Align = alClient
         BevelInner = bvRaised
         BevelOuter = bvLowered
         Color = clWhite
-        Constraints.MaxHeight = 1000
-        Constraints.MaxWidth = 1200
-        Constraints.MinHeight = 154
-        Constraints.MinWidth = 187
         ParentBackground = False
         TabOrder = 0
         OnResize = Panel211Resize
-        ExplicitHeight = 150
+        ExplicitWidth = 185
+        ExplicitHeight = 152
         object LabelNSat: TLabel
           Left = 1
           Top = 112
@@ -262,17 +269,17 @@ object MainForm: TMainForm
       end
       object Panel213: TPanel
         Left = 0
-        Top = 171
-        Width = 187
+        Top = 184
+        Width = 200
         Height = 16
         Align = alBottom
         TabOrder = 1
-        ExplicitTop = 184
-        ExplicitWidth = 200
+        ExplicitTop = 169
+        ExplicitWidth = 185
         object ScbSol: TScrollBar
           Left = 1
           Top = 1
-          Width = 160
+          Width = 173
           Height = 14
           Margins.Left = 2
           Margins.Top = 2
@@ -289,10 +296,10 @@ object MainForm: TMainForm
           ShowHint = False
           TabOrder = 0
           OnChange = ScbSolChange
-          ExplicitWidth = 173
+          ExplicitWidth = 158
         end
         object BtnSave: TButton
-          Left = 161
+          Left = 174
           Top = 1
           Width = 25
           Height = 14
@@ -306,18 +313,18 @@ object MainForm: TMainForm
           ParentFont = False
           TabOrder = 1
           OnClick = BtnSaveClick
-          ExplicitLeft = 174
+          ExplicitLeft = 159
         end
       end
       object Panel212: TPanel
         Left = 0
         Top = 0
-        Width = 187
+        Width = 200
         Height = 17
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 2
-        ExplicitWidth = 200
+        ExplicitWidth = 185
         object Plabel0: TLabel
           Left = 30
           Top = 2
@@ -359,21 +366,20 @@ object MainForm: TMainForm
       end
     end
     object Panel22: TPanel
-      Left = 191
+      Left = 212
       Top = 0
-      Width = 185
-      Height = 189
+      Width = 200
+      Height = 200
       Align = alLeft
       BevelOuter = bvNone
       Color = clWhite
       Constraints.MaxHeight = 1000
       Constraints.MaxWidth = 1200
       Constraints.MinHeight = 185
-      Constraints.MinWidth = 185
+      Constraints.MinWidth = 200
       TabOrder = 1
       OnResize = Panel22Resize
-      ExplicitLeft = 199
-      ExplicitHeight = 207
+      ExplicitHeight = 202
       object Disp1: TImage
         Left = 0
         Top = 0
@@ -487,20 +493,21 @@ object MainForm: TMainForm
       end
     end
     object Panel23: TPanel
-      Left = 388
+      Left = 416
       Top = 0
-      Width = 185
-      Height = 189
+      Width = 202
+      Height = 200
       Align = alClient
       BevelOuter = bvNone
       Color = clWhite
       Constraints.MaxHeight = 1000
       Constraints.MaxWidth = 1200
       Constraints.MinHeight = 185
-      Constraints.MinWidth = 185
+      Constraints.MinWidth = 200
       TabOrder = 2
       OnResize = Panel23Resize
-      ExplicitHeight = 207
+      ExplicitWidth = 200
+      ExplicitHeight = 202
       object Disp2: TImage
         Left = 0
         Top = 0
@@ -614,20 +621,21 @@ object MainForm: TMainForm
       end
     end
     object Panel24: TPanel
-      Left = 388
+      Left = 416
       Top = 0
-      Width = 185
-      Height = 189
+      Width = 202
+      Height = 200
       Align = alClient
       BevelOuter = bvNone
       Color = clWhite
       Constraints.MaxHeight = 1000
       Constraints.MaxWidth = 1200
       Constraints.MinHeight = 185
-      Constraints.MinWidth = 185
+      Constraints.MinWidth = 200
       TabOrder = 3
       OnResize = Panel24Resize
-      ExplicitHeight = 207
+      ExplicitWidth = 200
+      ExplicitHeight = 202
       object Disp3: TImage
         Left = 0
         Top = 0
@@ -741,20 +749,22 @@ object MainForm: TMainForm
       end
     end
     object Panel25: TPanel
-      Left = 388
+      Left = 416
       Top = 0
-      Width = 185
-      Height = 189
+      Width = 202
+      Height = 200
       Align = alClient
       BevelOuter = bvNone
       Color = clWhite
       Constraints.MaxHeight = 1000
       Constraints.MaxWidth = 1200
       Constraints.MinHeight = 185
-      Constraints.MinWidth = 185
+      Constraints.MinWidth = 200
       TabOrder = 4
       OnResize = Panel25Resize
-      ExplicitHeight = 207
+      ExplicitLeft = 389
+      ExplicitWidth = 190
+      ExplicitHeight = 185
       object Disp4: TImage
         Left = 0
         Top = 0
@@ -871,8 +881,8 @@ object MainForm: TMainForm
   object Panel3: TPanel
     AlignWithMargins = True
     Left = 1
-    Top = 240
-    Width = 573
+    Top = 253
+    Width = 616
     Height = 25
     Margins.Left = 1
     Margins.Top = 1
@@ -882,8 +892,8 @@ object MainForm: TMainForm
     BevelInner = bvRaised
     BevelOuter = bvLowered
     TabOrder = 2
-    ExplicitTop = 253
-    ExplicitWidth = 616
+    ExplicitTop = 238
+    ExplicitWidth = 579
     object BtnMonitor: TSpeedButton
       Left = 2
       Top = 2
@@ -926,7 +936,7 @@ object MainForm: TMainForm
     object Message: TLabel
       Left = 25
       Top = 2
-      Width = 500
+      Width = 543
       Height = 21
       Align = alClient
       Alignment = taCenter
@@ -946,7 +956,7 @@ object MainForm: TMainForm
       ExplicitHeight = 19
     end
     object BtnAbout: TSpeedButton
-      Left = 548
+      Left = 591
       Top = 2
       Width = 23
       Height = 21
@@ -968,7 +978,7 @@ object MainForm: TMainForm
       ExplicitHeight = 24
     end
     object BtnTaskTray: TSpeedButton
-      Left = 525
+      Left = 568
       Top = 2
       Width = 23
       Height = 21
@@ -1006,8 +1016,8 @@ object MainForm: TMainForm
   object Panel4: TPanel
     AlignWithMargins = True
     Left = 0
-    Top = 267
-    Width = 575
+    Top = 280
+    Width = 618
     Height = 31
     Margins.Left = 0
     Margins.Top = 1
@@ -1017,8 +1027,8 @@ object MainForm: TMainForm
     BevelOuter = bvNone
     TabOrder = 3
     OnResize = Panel4Resize
-    ExplicitTop = 280
-    ExplicitWidth = 618
+    ExplicitTop = 265
+    ExplicitWidth = 581
     object BtnStart: TBitBtn
       Left = 2
       Top = 0
@@ -1201,7 +1211,7 @@ object MainForm: TMainForm
     AlignWithMargins = True
     Left = 1
     Top = 30
-    Width = 573
+    Width = 616
     Height = 19
     Margins.Left = 1
     Margins.Top = 1
@@ -1215,7 +1225,7 @@ object MainForm: TMainForm
     TabOrder = 4
     Visible = False
     OnResize = Panel5Resize
-    ExplicitWidth = 616
+    ExplicitWidth = 579
     object SolS: TLabel
       Left = 40
       Top = 2
@@ -1324,7 +1334,7 @@ object MainForm: TMainForm
     AlignWithMargins = True
     Left = 1
     Top = 1
-    Width = 573
+    Width = 616
     Height = 27
     Margins.Left = 1
     Margins.Top = 1
@@ -1334,7 +1344,7 @@ object MainForm: TMainForm
     BevelInner = bvRaised
     BevelOuter = bvLowered
     TabOrder = 0
-    ExplicitWidth = 616
+    ExplicitWidth = 579
     object LabelTime: TLabel
       Left = 4
       Top = 6
@@ -1377,16 +1387,16 @@ object MainForm: TMainForm
       end
     end
     object Panel12: TPanel
-      Left = 384
+      Left = 414
       Top = 2
-      Width = 187
+      Width = 200
       Height = 23
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 429
+      ExplicitLeft = 377
       object Image1: TImage
-        Left = 56
+        Left = 63
         Top = 3
         Width = 29
         Height = 17
@@ -1448,7 +1458,7 @@ object MainForm: TMainForm
         Transparent = True
       end
       object Image2: TImage
-        Left = 38
+        Left = 43
         Top = 3
         Width = 29
         Height = 17
@@ -1510,7 +1520,7 @@ object MainForm: TMainForm
         Transparent = True
       end
       object Str1: TPanel
-        Left = 31
+        Left = 33
         Top = 5
         Width = 9
         Height = 14
@@ -1521,7 +1531,7 @@ object MainForm: TMainForm
         TabOrder = 0
       end
       object Str2: TPanel
-        Left = 40
+        Left = 42
         Top = 5
         Width = 9
         Height = 14
@@ -1532,7 +1542,7 @@ object MainForm: TMainForm
         TabOrder = 1
       end
       object Str3: TPanel
-        Left = 49
+        Left = 51
         Top = 5
         Width = 9
         Height = 14
@@ -1543,7 +1553,7 @@ object MainForm: TMainForm
         TabOrder = 2
       end
       object Str4: TPanel
-        Left = 85
+        Left = 93
         Top = 5
         Width = 9
         Height = 14
@@ -1554,7 +1564,7 @@ object MainForm: TMainForm
         TabOrder = 3
       end
       object Str5: TPanel
-        Left = 94
+        Left = 102
         Top = 5
         Width = 9
         Height = 14
@@ -1565,7 +1575,7 @@ object MainForm: TMainForm
         TabOrder = 4
       end
       object Str6: TPanel
-        Left = 105
+        Left = 114
         Top = 5
         Width = 9
         Height = 14
@@ -1576,7 +1586,7 @@ object MainForm: TMainForm
         TabOrder = 5
       end
       object Str7: TPanel
-        Left = 114
+        Left = 123
         Top = 5
         Width = 9
         Height = 14
@@ -1587,7 +1597,7 @@ object MainForm: TMainForm
         TabOrder = 6
       end
       object Str8: TPanel
-        Left = 123
+        Left = 132
         Top = 5
         Width = 9
         Height = 14
@@ -1598,7 +1608,7 @@ object MainForm: TMainForm
         TabOrder = 7
       end
       object Svr: TPanel
-        Left = 67
+        Left = 72
         Top = 5
         Width = 9
         Height = 14
@@ -1638,7 +1648,7 @@ object MainForm: TMainForm
         end
       end
       object Panel122: TPanel
-        Left = 134
+        Left = 144
         Top = 0
         Width = 27
         Height = 22
@@ -1668,7 +1678,7 @@ object MainForm: TMainForm
         end
       end
       object Panel123: TPanel
-        Left = 161
+        Left = 173
         Top = 0
         Width = 27
         Height = 22
@@ -1763,7 +1773,7 @@ object MainForm: TMainForm
     Left = 274
     Top = 91
     Bitmap = {
-      494C010102000400180110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000400140110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
