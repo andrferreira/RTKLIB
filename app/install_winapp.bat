@@ -28,12 +28,6 @@ cd ..
 cd rtklaunch
 call install.bat
 cd ..
-cd rtkvideo
-call install.bat
-cd ..
-cd rtkvplayer
-call install.bat
-cd ..
 cd rtkpost_win64
 call install.bat
 cd ..

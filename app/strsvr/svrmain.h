@@ -15,7 +15,6 @@
 
 #include "rtklib.h"
 #include "tcpoptdlg.h"
-#include <System.ImageList.hpp>
 
 #define MAXSTR        4    // number of streams
 
@@ -131,7 +130,7 @@ private:
 	AnsiString ConvMsg[MAXSTR-1],ConvOpt[MAXSTR-1],AntType,RcvType;
 	int ConvEna[MAXSTR-1],ConvInp[MAXSTR-1],ConvOut[MAXSTR-1],StaId,StaSel;
 	int TraceLevel,SvrOpt[6],CmdEna[MAXSTR][2],CmdEnaTcp[MAXSTR][2];
-	int NmeaReq,FileSwapMargin,RelayBack,ProgBarRange;
+	int NmeaReq,FileSwapMargin,RelayBack;
 	double AntPos[3],AntOff[3];
 	gtime_t StartTime,EndTime;
 	
