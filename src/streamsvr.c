@@ -16,7 +16,6 @@
 *           2015/12/05 1.6  support rtcm 3 mt 63 beidou ephemeris
 *           2016/07/23 1.7  change api strsvrstart(),strsvrstop()
 *                           support command for output streams
-*           2016/08/20 1.8  support api change of sendnmea()
 *-----------------------------------------------------------------------------*/
 #include "rtklib.h"
 
@@ -365,7 +364,6 @@ static void *strsvrthread(void *arg)
 #endif
 {
     strsvr_t *svr=(strsvr_t *)arg;
-    sol_t sol_nmea={{0}};
     unsigned int tick,ticknmea;
     unsigned char buff[1024];
     int i,n;
@@ -399,10 +397,7 @@ static void *strsvrthread(void *arg)
         }
         /* write nmea messages to input stream */
         if (svr->nmeacycle>0&&(int)(tick-ticknmea)>=svr->nmeacycle) {
-            sol_nmea.stat=SOLQ_SINGLE;
-            sol_nmea.time=utc2gpst(timeget());
-            matcpy(sol_nmea.rr,svr->nmeapos,3,1);
-            strsendnmea(svr->stream,&sol_nmea);
+            strsendnmea(svr->stream,svr->nmeapos);
             ticknmea=tick;
         }
         lock(&svr->lock);

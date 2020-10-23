@@ -28,10 +28,3 @@ cd ..
 cd rtklaunch
 call clean.bat
 cd ..
-cd rtkpost_win64
-call clean.bat
-cd ..
-cd rtknavi_win64
-call clean.bat
-cd ..
-
