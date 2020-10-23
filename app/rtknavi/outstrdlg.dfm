@@ -6,7 +6,7 @@ object OutputStrDialog: TOutputStrDialog
   Caption = 'Output Streams'
   ClientHeight = 155
   ClientWidth = 390
-  Color = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

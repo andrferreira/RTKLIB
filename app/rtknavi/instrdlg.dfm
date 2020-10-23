@@ -6,7 +6,7 @@ object InputStrDialog: TInputStrDialog
   Caption = 'Input Streams'
   ClientHeight = 235
   ClientWidth = 400
-  Color = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

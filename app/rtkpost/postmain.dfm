@@ -2,13 +2,11 @@ object MainForm: TMainForm
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'RTKPOST'
-  ClientHeight = 348
-  ClientWidth = 472
+  ClientHeight = 337
+  ClientWidth = 470
   Color = clWindow
-  Constraints.MaxHeight = 386
-  Constraints.MinHeight = 386
-  Constraints.MinWidth = 488
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -16,7 +14,6 @@ object MainForm: TMainForm
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  Scaled = False
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -25,22 +22,16 @@ object MainForm: TMainForm
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 472
-    Height = 318
+    Width = 470
+    Height = 307
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
     object Message: TPanel
-      AlignWithMargins = True
-      Left = 1
-      Top = 282
-      Width = 470
+      Left = 2
+      Top = 275
+      Width = 467
       Height = 25
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alTop
       BevelInner = bvRaised
       BevelOuter = bvLowered
       Font.Charset = DEFAULT_CHARSET
@@ -51,11 +42,10 @@ object MainForm: TMainForm
       ParentFont = False
       TabOrder = 3
       object BtnAbout: TSpeedButton
-        Left = 443
-        Top = 2
+        Left = 439
+        Top = 0
         Width = 25
-        Height = 21
-        Align = alRight
+        Height = 24
         Caption = '?'
         Flat = True
         Font.Charset = DEFAULT_CHARSET
@@ -65,17 +55,13 @@ object MainForm: TMainForm
         Font.Style = []
         ParentFont = False
         OnClick = BtnAboutClick
-        ExplicitLeft = 439
-        ExplicitTop = 0
-        ExplicitHeight = 24
       end
       object BtnOutputView2: TSpeedButton
-        Left = 27
-        Top = 2
+        Left = 25
+        Top = 0
         Width = 25
-        Height = 21
+        Height = 24
         Hint = 'Show Debug Trace'
-        Align = alLeft
         Flat = True
         Glyph.Data = {
           3E020000424D3E0200000000000036000000280000000D0000000D0000000100
@@ -100,17 +86,13 @@ object MainForm: TMainForm
         ParentShowHint = False
         ShowHint = True
         OnClick = BtnOutputView2Click
-        ExplicitLeft = 25
-        ExplicitTop = 0
-        ExplicitHeight = 24
       end
       object BtnOutputView1: TSpeedButton
         Left = 2
-        Top = 2
+        Top = 0
         Width = 25
-        Height = 21
+        Height = 24
         Hint = 'Show Stat File'
-        Align = alLeft
         Flat = True
         Glyph.Data = {
           3E020000424D3E0200000000000036000000280000000D0000000D0000000100
@@ -135,36 +117,22 @@ object MainForm: TMainForm
         ParentShowHint = False
         ShowHint = True
         OnClick = BtnOutputView1Click
-        ExplicitTop = 0
-        ExplicitHeight = 24
       end
     end
     object Progress: TProgressBar
-      AlignWithMargins = True
       Left = 2
-      Top = 309
-      Width = 468
+      Top = 302
+      Width = 466
       Height = 7
-      Margins.Left = 2
-      Margins.Top = 1
-      Margins.Right = 2
-      Margins.Bottom = 1
-      Align = alTop
       Smooth = True
       Step = 1
       TabOrder = 4
     end
     object Panel3: TPanel
-      AlignWithMargins = True
-      Left = 1
-      Top = 1
-      Width = 470
+      Left = 2
+      Top = 2
+      Width = 467
       Height = 43
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alTop
       BevelInner = bvRaised
       BevelOuter = bvLowered
       TabOrder = 0
@@ -344,20 +312,13 @@ object MainForm: TMainForm
       end
     end
     object Panel4: TPanel
-      AlignWithMargins = True
-      Left = 1
-      Top = 46
-      Width = 470
-      Height = 183
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alTop
+      Left = 2
+      Top = 45
+      Width = 467
+      Height = 182
       BevelInner = bvRaised
       BevelOuter = bvLowered
       TabOrder = 1
-      OnResize = Panel4Resize
       object LabelInputFile1: TLabel
         Left = 6
         Top = 4
@@ -612,18 +573,6 @@ object MainForm: TMainForm
           FF00}
         OnClick = BtnInputView6Click
       end
-      object Debug: TLabel
-        Left = 225
-        Top = 3
-        Width = 3
-        Height = 13
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-      end
       object InputFile1: TComboBox
         Left = 4
         Top = 18
@@ -765,20 +714,13 @@ object MainForm: TMainForm
       end
     end
     object Panel5: TPanel
-      AlignWithMargins = True
-      Left = 1
-      Top = 231
-      Width = 470
-      Height = 49
-      Margins.Left = 1
-      Margins.Top = 1
-      Margins.Right = 1
-      Margins.Bottom = 1
-      Align = alTop
+      Left = 2
+      Top = 227
+      Width = 467
+      Height = 48
       BevelInner = bvRaised
       BevelOuter = bvLowered
       TabOrder = 2
-      OnResize = Panel5Resize
       object Label1: TLabel
         Left = 6
         Top = 6
@@ -853,13 +795,30 @@ object MainForm: TMainForm
   end
   object Panel2: TPanel
     Left = 0
-    Top = 318
-    Width = 472
+    Top = 307
+    Width = 470
     Height = 30
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    OnResize = Panel2Resize
+    object BtnToKML: TButton
+      Left = 157
+      Top = 1
+      Width = 78
+      Height = 29
+      Caption = '&KML/GPX...'
+      TabOrder = 0
+      OnClick = BtnToKMLClick
+    end
+    object BtnExit: TButton
+      Left = 391
+      Top = 1
+      Width = 78
+      Height = 29
+      Caption = '&Exit'
+      TabOrder = 1
+      OnClick = BtnExitClick
+    end
     object BtnView: TBitBtn
       Left = 79
       Top = 1
@@ -886,7 +845,7 @@ object MainForm: TMainForm
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FF00}
-      TabOrder = 1
+      TabOrder = 2
       OnClick = BtnViewClick
     end
     object BtnOption: TBitBtn
@@ -1003,26 +962,8 @@ object MainForm: TMainForm
         FF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FF00}
-      TabOrder = 0
-      OnClick = BtnPlotClick
-    end
-    object BtnToKML: TBitBtn
-      Left = 158
-      Top = 1
-      Width = 75
-      Height = 29
-      Caption = '&KML/GPX...'
-      TabOrder = 2
-      OnClick = BtnToKMLClick
-    end
-    object BtnExit: TBitBtn
-      Left = 391
-      Top = 1
-      Width = 75
-      Height = 29
-      Caption = 'E&xit'
       TabOrder = 6
-      OnClick = BtnExitClick
+      OnClick = BtnPlotClick
     end
   end
   object OpenDialog: TOpenDialog

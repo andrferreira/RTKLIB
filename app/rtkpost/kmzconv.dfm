@@ -6,7 +6,7 @@ object ConvDialog: TConvDialog
   Caption = 'KML/GPX Converter'
   ClientHeight = 290
   ClientWidth = 395
-  Color = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

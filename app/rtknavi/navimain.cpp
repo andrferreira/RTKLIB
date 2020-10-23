@@ -283,7 +283,7 @@ void __fastcall TMainForm::Panel4Resize(TObject *Sender)
         btn[i]->Left=w*i+1;
         btn[i]->Top=0;
         btn[i]->Width=w-2;
-        btn[i]->Height=h-2;
+        btn[i]->Height=h;
     }
     BtnStop->Left  =BtnStart->Left;
     BtnStop->Top   =BtnStart->Top;
@@ -984,31 +984,27 @@ void __fastcall TMainForm::SvrStart(void)
     Message->Caption=""; Message->Parent->Hint="";
     
     if (RovPosTypeF<=2) { // LLH,XYZ
-        PrcOpt.rovpos=POSOPT_POS;
+        PrcOpt.rovpos=0;
         PrcOpt.ru[0]=RovPos[0];
         PrcOpt.ru[1]=RovPos[1];
         PrcOpt.ru[2]=RovPos[2];
     }
     else { // RTCM position
-        PrcOpt.rovpos=POSOPT_RTCM;
+        PrcOpt.rovpos=4;
         for (i=0;i<3;i++) PrcOpt.ru[i]=0.0;
     }
     if (RefPosTypeF<=2) { // LLH,XYZ
-        PrcOpt.refpos=POSOPT_POS;
+        PrcOpt.refpos=0;
         PrcOpt.rb[0]=RefPos[0];
         PrcOpt.rb[1]=RefPos[1];
         PrcOpt.rb[2]=RefPos[2];
     }
     else if (RefPosTypeF==3) { // RTCM position
-        PrcOpt.refpos=POSOPT_RTCM;
-        for (i=0;i<3;i++) PrcOpt.rb[i]=0.0;
-    }
-    else if (RefPosTypeF==4) { // raw position
-        PrcOpt.refpos=POSOPT_RAW;
+        PrcOpt.refpos=4;
         for (i=0;i<3;i++) PrcOpt.rb[i]=0.0;
     }
     else { // average of single position
-        PrcOpt.refpos=POSOPT_SINGLE;
+        PrcOpt.refpos=1;
         for (i=0;i<3;i++) PrcOpt.rb[i]=0.0;
     }
     for (i=0;i<MAXSAT;i++) {

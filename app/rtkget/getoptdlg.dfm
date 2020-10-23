@@ -3,9 +3,9 @@ object DownOptDialog: TDownOptDialog
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Options'
-  ClientHeight = 257
+  ClientHeight = 254
   ClientWidth = 356
-  Color = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -20,7 +20,7 @@ object DownOptDialog: TDownOptDialog
     Left = 193
     Top = 227
     Width = 79
-    Height = 29
+    Height = 27
     Caption = '&OK'
     ModalResult = 1
     TabOrder = 1
@@ -30,7 +30,7 @@ object DownOptDialog: TDownOptDialog
     Left = 273
     Top = 227
     Width = 79
-    Height = 29
+    Height = 27
     Caption = '&Cancel'
     ModalResult = 2
     TabOrder = 2

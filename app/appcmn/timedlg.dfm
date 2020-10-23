@@ -6,7 +6,7 @@ object TimeDialog: TTimeDialog
   Caption = 'Time'
   ClientHeight = 143
   ClientWidth = 170
-  Color = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -27,10 +27,10 @@ object TimeDialog: TTimeDialog
     Caption = 'message'
   end
   object BtnOk: TButton
-    Left = 134
-    Top = 118
-    Width = 35
-    Height = 25
+    Left = 138
+    Top = 122
+    Width = 31
+    Height = 21
     Caption = 'OK'
     ModalResult = 1
     TabOrder = 0

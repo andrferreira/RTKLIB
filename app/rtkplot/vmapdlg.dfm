@@ -5,7 +5,7 @@ object VecMapDialog: TVecMapDialog
   Caption = 'Map Layer'
   ClientHeight = 333
   ClientWidth = 398
-  Color = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

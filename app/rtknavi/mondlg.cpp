@@ -828,11 +828,6 @@ void __fastcall TMonitorDialog::ShowEst(void)
 		memcpy(xa,rtksvr.rtk.xa,sizeof(double)*na);
 		memcpy(Pa,rtksvr.rtk.Pa,sizeof(double)*na*na);
 	}
-	else {
-		rtksvrunlock(&rtksvr);
-		free(x); free(P); free(xa); free(Pa);
-		return;
-	}
 	rtksvrunlock(&rtksvr);
 	
 	for (i=0,n=1;i<nx;i++) {
@@ -890,11 +885,6 @@ void __fastcall TMonitorDialog::ShowCov(void)
 	    (P =(double *)malloc(sizeof(double)*nx*nx))) {
 		memcpy(x ,rtksvr.rtk.x ,sizeof(double)*nx);
 		memcpy(P ,rtksvr.rtk.P ,sizeof(double)*nx*nx);
-	}
-	else {
-		rtksvrunlock(&rtksvr);
-		free(x); free(P);
-		return;
 	}
 	rtksvrunlock(&rtksvr);
 	

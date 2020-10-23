@@ -3,9 +3,9 @@ object ConnectDialog: TConnectDialog
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Connection Settings'
-  ClientHeight = 164
+  ClientHeight = 163
   ClientWidth = 283
-  Color = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -90,7 +90,7 @@ object ConnectDialog: TConnectDialog
     Left = 94
     Top = 134
     Width = 89
-    Height = 29
+    Height = 27
     Caption = '&OK'
     ModalResult = 1
     TabOrder = 0
@@ -100,7 +100,7 @@ object ConnectDialog: TConnectDialog
     Left = 186
     Top = 134
     Width = 89
-    Height = 29
+    Height = 27
     Cancel = True
     Caption = '&Cancel'
     ModalResult = 2

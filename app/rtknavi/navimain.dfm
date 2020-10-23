@@ -3,13 +3,13 @@ object MainForm: TMainForm
   Top = 0
   BorderIcons = [biMinimize]
   Caption = 'RTKNAVI'
-  ClientHeight = 297
-  ClientWidth = 572
+  ClientHeight = 273
+  ClientWidth = 566
   Color = clWindow
   Constraints.MaxHeight = 800
   Constraints.MaxWidth = 1200
-  Constraints.MinHeight = 314
-  Constraints.MinWidth = 225
+  Constraints.MinHeight = 311
+  Constraints.MinWidth = 220
   Font.Charset = ANSI_CHARSET
   Font.Color = clBlack
   Font.Height = -11
@@ -23,50 +23,45 @@ object MainForm: TMainForm
   PixelsPerInch = 96
   TextHeight = 13
   object Panel2: TPanel
-    AlignWithMargins = True
-    Left = 1
-    Top = 51
-    Width = 570
-    Height = 184
-    Margins.Left = 1
-    Margins.Top = 1
-    Margins.Right = 1
-    Margins.Bottom = 1
+    Left = 0
+    Top = 46
+    Width = 566
+    Height = 170
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 1
     object Splitter1: TSplitter
-      Left = 185
+      Left = 182
       Top = 0
       Width = 4
-      Height = 184
+      Height = 170
       Beveled = True
       Color = clBtnFace
       ParentColor = False
-      ExplicitLeft = 182
       ExplicitHeight = 169
     end
     object Panel21: TPanel
       Left = 0
       Top = 0
-      Width = 185
-      Height = 184
+      Width = 182
+      Height = 170
       Align = alLeft
       BevelOuter = bvNone
       Color = clWindow
       Constraints.MaxHeight = 768
       Constraints.MaxWidth = 1200
-      Constraints.MinWidth = 185
+      Constraints.MinHeight = 170
+      Constraints.MinWidth = 182
       ParentBackground = False
       TabOrder = 0
       OnResize = Panel21Resize
       object Panel211: TPanel
         Left = 0
         Top = 17
-        Width = 185
-        Height = 151
+        Width = 182
+        Height = 137
         Align = alClient
         BevelInner = bvRaised
         BevelOuter = bvLowered
@@ -226,15 +221,15 @@ object MainForm: TMainForm
       end
       object Panel213: TPanel
         Left = 0
-        Top = 168
-        Width = 185
+        Top = 154
+        Width = 182
         Height = 16
         Align = alBottom
         TabOrder = 1
         object ScbSol: TScrollBar
           Left = 1
           Top = 1
-          Width = 158
+          Width = 155
           Height = 14
           Margins.Left = 2
           Margins.Top = 2
@@ -253,7 +248,7 @@ object MainForm: TMainForm
           OnChange = ScbSolChange
         end
         object BtnSave: TButton
-          Left = 159
+          Left = 156
           Top = 1
           Width = 25
           Height = 14
@@ -267,12 +262,13 @@ object MainForm: TMainForm
           ParentFont = False
           TabOrder = 1
           OnClick = BtnSaveClick
+          ExplicitTop = 0
         end
       end
       object Panel212: TPanel
         Left = 0
         Top = 0
-        Width = 185
+        Width = 182
         Height = 17
         Align = alTop
         BevelOuter = bvNone
@@ -318,10 +314,10 @@ object MainForm: TMainForm
       end
     end
     object Panel22: TPanel
-      Left = 189
+      Left = 186
       Top = 0
-      Width = 381
-      Height = 184
+      Width = 380
+      Height = 170
       Align = alClient
       AutoSize = True
       BevelOuter = bvNone
@@ -331,7 +327,7 @@ object MainForm: TMainForm
         Left = 188
         Top = 0
         Width = 4
-        Height = 184
+        Height = 170
         Beveled = True
         Color = clBtnFace
         ParentColor = False
@@ -343,7 +339,7 @@ object MainForm: TMainForm
         Left = 0
         Top = 0
         Width = 188
-        Height = 184
+        Height = 170
         Align = alLeft
         BevelOuter = bvNone
         Color = clWhite
@@ -468,8 +464,8 @@ object MainForm: TMainForm
       object Panel222: TPanel
         Left = 192
         Top = 0
-        Width = 189
-        Height = 184
+        Width = 188
+        Height = 170
         Align = alClient
         BevelOuter = bvNone
         Color = clWhite
@@ -594,15 +590,10 @@ object MainForm: TMainForm
     end
   end
   object Panel3: TPanel
-    AlignWithMargins = True
-    Left = 1
-    Top = 237
-    Width = 570
+    Left = 0
+    Top = 216
+    Width = 566
     Height = 28
-    Margins.Left = 1
-    Margins.Top = 1
-    Margins.Right = 1
-    Margins.Bottom = 1
     Align = alBottom
     BevelInner = bvRaised
     BevelOuter = bvLowered
@@ -610,19 +601,17 @@ object MainForm: TMainForm
     object Panel33: TPanel
       Left = 522
       Top = 2
-      Width = 46
+      Width = 42
       Height = 24
       Align = alRight
-      AutoSize = True
       BevelOuter = bvNone
       TabOrder = 0
       object BtnTaskTray: TSpeedButton
         Left = 0
         Top = 0
-        Width = 23
-        Height = 24
+        Width = 22
+        Height = 23
         Hint = 'Hide'
-        Align = alLeft
         Flat = True
         Glyph.Data = {
           3E020000424D3E0200000000000036000000280000000D0000000D0000000100
@@ -651,10 +640,9 @@ object MainForm: TMainForm
       object BtnAbout: TSpeedButton
         Left = 23
         Top = 0
-        Width = 23
-        Height = 24
+        Width = 18
+        Height = 23
         Hint = 'About'
-        Align = alLeft
         Caption = '?'
         Flat = True
         Font.Charset = DEFAULT_CHARSET
@@ -666,7 +654,6 @@ object MainForm: TMainForm
         ParentShowHint = False
         ShowHint = True
         OnClick = BtnAboutClick
-        ExplicitLeft = 22
       end
     end
     object Panel31: TPanel
@@ -678,12 +665,11 @@ object MainForm: TMainForm
       BevelOuter = bvNone
       TabOrder = 1
       object BtnMonitor: TSpeedButton
-        Left = 0
+        Left = 1
         Top = 0
-        Width = 23
-        Height = 24
+        Width = 22
+        Height = 23
         Hint = 'RTK Monitor'
-        Align = alClient
         Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
@@ -714,7 +700,6 @@ object MainForm: TMainForm
         ParentShowHint = False
         ShowHint = True
         OnClick = BtnMonitorClick
-        ExplicitLeft = 1
       end
     end
     object Panel32: TPanel
@@ -730,10 +715,10 @@ object MainForm: TMainForm
       TabOrder = 2
       object Message: TLabel
         Left = 0
-        Top = 0
+        Top = 5
         Width = 497
-        Height = 24
-        Align = alClient
+        Height = 19
+        Align = alBottom
         Alignment = taCenter
         AutoSize = False
         Font.Charset = DEFAULT_CHARSET
@@ -744,17 +729,15 @@ object MainForm: TMainForm
         ParentFont = False
         ParentShowHint = False
         ShowHint = False
-        Layout = tlCenter
         ExplicitTop = 6
-        ExplicitHeight = 19
       end
     end
   end
   object Panel4: TPanel
     Left = 0
-    Top = 266
-    Width = 572
-    Height = 31
+    Top = 244
+    Width = 566
+    Height = 29
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 3
@@ -938,15 +921,10 @@ object MainForm: TMainForm
     end
   end
   object Panel5: TPanel
-    AlignWithMargins = True
-    Left = 1
-    Top = 30
-    Width = 570
+    Left = 0
+    Top = 27
+    Width = 566
     Height = 19
-    Margins.Left = 1
-    Margins.Top = 1
-    Margins.Right = 1
-    Margins.Bottom = 1
     Align = alTop
     BevelInner = bvRaised
     BevelOuter = bvNone
@@ -1016,7 +994,7 @@ object MainForm: TMainForm
   end
   object Pane6: TPanel
     Left = 1
-    Top = 29
+    Top = 26
     Width = 25
     Height = 18
     AutoSize = True
@@ -1060,15 +1038,10 @@ object MainForm: TMainForm
     end
   end
   object Panel1: TPanel
-    AlignWithMargins = True
-    Left = 1
-    Top = 1
-    Width = 570
+    Left = 0
+    Top = 0
+    Width = 566
     Height = 27
-    Margins.Left = 1
-    Margins.Top = 1
-    Margins.Right = 1
-    Margins.Bottom = 1
     Align = alTop
     BevelInner = bvRaised
     BevelOuter = bvLowered
@@ -1115,7 +1088,7 @@ object MainForm: TMainForm
       end
     end
     object Panel12: TPanel
-      Left = 368
+      Left = 364
       Top = 2
       Width = 200
       Height = 23
@@ -1500,7 +1473,7 @@ object MainForm: TMainForm
     Left = 274
     Top = 91
     Bitmap = {
-      494C010102000400F40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000400E40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

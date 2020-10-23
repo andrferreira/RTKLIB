@@ -5,7 +5,7 @@ object PntDialog: TPntDialog
   Caption = 'Waypoint'
   ClientHeight = 344
   ClientWidth = 294
-  Color = clWhite
+  Color = clBtnFace
   Constraints.MaxWidth = 310
   Constraints.MinHeight = 200
   Constraints.MinWidth = 310

@@ -4,9 +4,9 @@ object SvrOptDialog: TSvrOptDialog
   BorderIcons = []
   BorderStyle = bsDialog
   Caption = 'Options'
-  ClientHeight = 283
-  ClientWidth = 386
-  Color = clWhite
+  ClientHeight = 281
+  ClientWidth = 379
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -39,14 +39,14 @@ object SvrOptDialog: TSvrOptDialog
     Caption = 'Inactive Timeout (ms)'
   end
   object Label6: TLabel
-    Left = 210
-    Top = 10
+    Left = 201
+    Top = 9
     Width = 93
     Height = 13
     Caption = 'Period of Rate (ms)'
   end
   object Label7: TLabel
-    Left = 210
+    Left = 201
     Top = 53
     Width = 98
     Height = 13
@@ -67,8 +67,8 @@ object SvrOptDialog: TSvrOptDialog
     Caption = 'FTP/HTTP Local Dir'
   end
   object Label9: TLabel
-    Left = 210
-    Top = 32
+    Left = 201
+    Top = 31
     Width = 96
     Height = 13
     Caption = 'File Swap Margin (s)'
@@ -109,20 +109,20 @@ object SvrOptDialog: TSvrOptDialog
     Caption = 'Receiver Info'
   end
   object BtnOk: TButton
-    Left = 182
+    Left = 179
     Top = 253
     Width = 95
-    Height = 29
+    Height = 27
     Caption = '&OK'
     ModalResult = 1
     TabOrder = 0
     OnClick = BtnOkClick
   end
   object BtnCancel: TButton
-    Left = 284
+    Left = 274
     Top = 253
     Width = 95
-    Height = 29
+    Height = 27
     Caption = '&Cancel'
     ModalResult = 2
     TabOrder = 1
@@ -160,7 +160,7 @@ object SvrOptDialog: TSvrOptDialog
     Text = '2000'
   end
   object AvePeriodRate: TEdit
-    Left = 317
+    Left = 308
     Top = 7
     Width = 61
     Height = 21
@@ -168,7 +168,7 @@ object SvrOptDialog: TSvrOptDialog
     Text = '1000'
   end
   object TraceLevelS: TComboBox
-    Left = 317
+    Left = 308
     Top = 51
     Width = 61
     Height = 21
@@ -201,7 +201,7 @@ object SvrOptDialog: TSvrOptDialog
     Text = '0.000'
   end
   object NmeaCycle: TEdit
-    Left = 317
+    Left = 308
     Top = 73
     Width = 61
     Height = 21
@@ -218,9 +218,9 @@ object SvrOptDialog: TSvrOptDialog
   end
   object BtnPos: TButton
     Left = 354
-    Top = 117
-    Width = 25
-    Height = 23
+    Top = 118
+    Width = 21
+    Height = 21
     Caption = '...'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -232,8 +232,8 @@ object SvrOptDialog: TSvrOptDialog
     OnClick = BtnPosClick
   end
   object NmeaReqT: TCheckBox
-    Left = 209
-    Top = 76
+    Left = 200
+    Top = 75
     Width = 100
     Height = 17
     Caption = 'NMEA Cycle (ms)'
@@ -248,10 +248,10 @@ object SvrOptDialog: TSvrOptDialog
     TabOrder = 15
   end
   object BtnLocalDir: TButton
-    Left = 354
-    Top = 207
-    Width = 25
-    Height = 23
+    Left = 353
+    Top = 208
+    Width = 21
+    Height = 21
     Caption = '...'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -263,7 +263,7 @@ object SvrOptDialog: TSvrOptDialog
     OnClick = BtnLocalDirClick
   end
   object FileSwapMarginE: TEdit
-    Left = 317
+    Left = 308
     Top = 29
     Width = 61
     Height = 21
@@ -272,15 +272,15 @@ object SvrOptDialog: TSvrOptDialog
   end
   object ProxyAddr: TEdit
     Left = 104
-    Top = 231
-    Width = 274
+    Top = 230
+    Width = 265
     Height = 21
     TabOrder = 17
   end
   object AntInfo: TEdit
     Left = 104
     Top = 162
-    Width = 274
+    Width = 265
     Height = 21
     TabOrder = 18
     Text = 'AntInfo'
@@ -288,7 +288,7 @@ object SvrOptDialog: TSvrOptDialog
   object RcvInfo: TEdit
     Left = 104
     Top = 184
-    Width = 274
+    Width = 265
     Height = 21
     TabOrder = 19
     Text = 'Edit1'
@@ -312,7 +312,7 @@ object SvrOptDialog: TSvrOptDialog
   object AntOff3: TEdit
     Left = 282
     Top = 140
-    Width = 96
+    Width = 87
     Height = 21
     TabOrder = 22
     Text = '0.000'

@@ -6,7 +6,7 @@ object FileOptDialog: TFileOptDialog
   Caption = 'File Options'
   ClientHeight = 73
   ClientWidth = 384
-  Color = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

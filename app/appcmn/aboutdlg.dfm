@@ -4,9 +4,9 @@ object AboutDialog: TAboutDialog
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'About'
-  ClientHeight = 95
+  ClientHeight = 101
   ClientWidth = 299
-  Color = clWhite
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -6262,10 +6262,10 @@ object AboutDialog: TAboutDialog
     end
   end
   object BtnOk: TButton
-    Left = 255
-    Top = 66
+    Left = 257
+    Top = 72
     Width = 41
-    Height = 27
+    Height = 28
     Caption = '&OK'
     ModalResult = 1
     TabOrder = 1
