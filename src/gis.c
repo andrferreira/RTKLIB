@@ -12,6 +12,8 @@
 *-----------------------------------------------------------------------------*/
 #include "rtklib.h"
 
+static const char rcsid[]="$Id:$";
+
 #define SHAPE_CODE  9994        /* shapefile code */
 
 /* get integer big-endian ----------------------------------------------------*/

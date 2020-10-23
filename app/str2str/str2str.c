@@ -32,6 +32,8 @@
 #include <unistd.h>
 #include "rtklib.h"
 
+static const char rcsid[]="$Id:$";
+
 #define PRGNAME     "str2str"          /* program name */
 #define MAXSTR      5                  /* max number of streams */
 #define TRFILE      "str2str.trace"    /* trace file */
