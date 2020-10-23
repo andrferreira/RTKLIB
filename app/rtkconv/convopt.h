@@ -89,7 +89,7 @@ __published:
 private:
 	void __fastcall UpdateEnable(void);
 public:
-	AnsiString CodeMask[7];
+	AnsiString CodeMask[6];
 	
 	__fastcall TConvOptDialog(TComponent* Owner);
 };
