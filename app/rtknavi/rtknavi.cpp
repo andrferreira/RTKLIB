@@ -30,20 +30,20 @@
 
 
 
-USEFORM("..\appcmn\viewer.cpp", TextViewer);
 USEFORM("..\appcmn\tcpoptdlg.cpp", TcpOptDialog);
 USEFORM("..\appcmn\serioptdlg.cpp", SerialOptDialog);
-USEFORM("..\appcmn\vieweropt.cpp", ViewerOptDialog);
-USEFORM("markdlg.cpp", MarkDialog);
+USEFORM("..\appcmn\refdlg.cpp", RefDialog);
+USEFORM("..\appcmn\viewer.cpp", TextViewer);
 USEFORM("logstrdlg.cpp", LogStrDialog);
 USEFORM("instrdlg.cpp", InputStrDialog);
-USEFORM("..\appcmn\refdlg.cpp", RefDialog);
-USEFORM("..\appcmn\confdlg.cpp", ConfDialog);
+USEFORM("..\appcmn\vieweropt.cpp", ViewerOptDialog);
+USEFORM("..\appcmn\maskoptdlg.cpp", MaskOptDialog);
 USEFORM("..\appcmn\cmdoptdlg.cpp", CmdOptDialog);
 USEFORM("..\appcmn\aboutdlg.cpp", AboutDialog);
-USEFORM("..\appcmn\ftpoptdlg.cpp", FtpOptDialog);
-USEFORM("..\appcmn\maskoptdlg.cpp", MaskOptDialog);
+USEFORM("..\appcmn\confdlg.cpp", ConfDialog);
 USEFORM("..\appcmn\keydlg.cpp", KeyDialog);
+USEFORM("..\appcmn\ftpoptdlg.cpp", FtpOptDialog);
+USEFORM("markdlg.cpp", MarkDialog);
 USEFORM("naviopt.cpp", OptDialog);
 USEFORM("navimain.cpp", MainForm);
 USEFORM("mondlg.cpp", MonitorDialog);
