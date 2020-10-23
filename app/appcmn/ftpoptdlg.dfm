@@ -4,7 +4,7 @@ object FtpOptDialog: TFtpOptDialog
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'FTP Options'
-  ClientHeight = 142
+  ClientHeight = 141
   ClientWidth = 365
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -104,19 +104,19 @@ object FtpOptDialog: TFtpOptDialog
     Caption = 'H'
   end
   object BtnCancel: TButton
-    Left = 279
-    Top = 110
+    Left = 278
+    Top = 112
     Width = 81
-    Height = 29
+    Height = 27
     Caption = '&Cancel'
     ModalResult = 2
     TabOrder = 0
   end
   object BtnOk: TButton
-    Left = 195
-    Top = 110
+    Left = 194
+    Top = 112
     Width = 81
-    Height = 29
+    Height = 27
     Caption = '&OK'
     ModalResult = 1
     TabOrder = 1

@@ -24,9 +24,3 @@ void __fastcall TAboutDialog::FormShow(TObject *Sender)
 	LabelCopyright->Caption=COPYRIGHT_RTKLIB;
 }
 //---------------------------------------------------------------------------
-void __fastcall TAboutDialog::BtnOkClick(TObject *Sender)
-{
-	Close();
-}
-//---------------------------------------------------------------------------
-

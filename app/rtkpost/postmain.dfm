@@ -3,11 +3,11 @@ object MainForm: TMainForm
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'RTKPOST'
-  ClientHeight = 347
+  ClientHeight = 348
   ClientWidth = 472
   Color = clWindow
-  Constraints.MaxHeight = 385
-  Constraints.MinHeight = 385
+  Constraints.MaxHeight = 386
+  Constraints.MinHeight = 386
   Constraints.MinWidth = 488
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -209,7 +209,6 @@ object MainForm: TMainForm
         Height = 21
         TabOrder = 1
         Text = '2000/01/01'
-        OnKeyDown = TimeY1KeyDown
       end
       object TimeH1: TEdit
         Left = 88
@@ -218,7 +217,6 @@ object MainForm: TMainForm
         Height = 21
         TabOrder = 3
         Text = '00:00:00'
-        OnKeyDown = TimeH1KeyDown
       end
       object TimeEnd: TCheckBox
         Left = 164
@@ -247,7 +245,6 @@ object MainForm: TMainForm
         Height = 21
         TabOrder = 6
         Text = '2099/12/31'
-        OnKeyDown = TimeY2KeyDown
       end
       object TimeY2UD: TUpDown
         Left = 229
@@ -266,7 +263,6 @@ object MainForm: TMainForm
         Height = 21
         TabOrder = 8
         Text = '23:59:59'
-        OnKeyDown = TimeH2KeyDown
       end
       object TimeH2UD: TUpDown
         Left = 303
@@ -852,14 +848,14 @@ object MainForm: TMainForm
     Left = 0
     Top = 318
     Width = 472
-    Height = 29
+    Height = 30
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
     OnResize = Panel2Resize
     object BtnView: TBitBtn
       Left = 79
-      Top = 0
+      Top = 1
       Width = 78
       Height = 29
       Caption = '&View...'
@@ -888,7 +884,7 @@ object MainForm: TMainForm
     end
     object BtnOption: TBitBtn
       Left = 235
-      Top = 0
+      Top = 1
       Width = 78
       Height = 29
       Caption = '&Options...'
@@ -917,7 +913,7 @@ object MainForm: TMainForm
     end
     object BtnExec: TBitBtn
       Left = 313
-      Top = 0
+      Top = 1
       Width = 78
       Height = 29
       Caption = 'E&xecute'
@@ -946,7 +942,7 @@ object MainForm: TMainForm
     end
     object BtnAbort: TBitBtn
       Left = 313
-      Top = 0
+      Top = 1
       Width = 78
       Height = 29
       Caption = '&Abort'
@@ -976,7 +972,7 @@ object MainForm: TMainForm
     end
     object BtnPlot: TBitBtn
       Left = 1
-      Top = 0
+      Top = 1
       Width = 78
       Height = 29
       Caption = '&Plot...'
@@ -1005,7 +1001,7 @@ object MainForm: TMainForm
     end
     object BtnToKML: TBitBtn
       Left = 158
-      Top = 0
+      Top = 1
       Width = 75
       Height = 29
       Caption = '&KML/GPX...'
@@ -1014,7 +1010,7 @@ object MainForm: TMainForm
     end
     object BtnExit: TBitBtn
       Left = 391
-      Top = 0
+      Top = 1
       Width = 75
       Height = 29
       Caption = 'E&xit'

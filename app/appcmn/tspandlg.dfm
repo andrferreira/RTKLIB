@@ -4,8 +4,8 @@ object SpanDialog: TSpanDialog
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Time Span/Interval'
-  ClientHeight = 119
-  ClientWidth = 303
+  ClientHeight = 114
+  ClientWidth = 289
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,36 +18,36 @@ object SpanDialog: TSpanDialog
   PixelsPerInch = 96
   TextHeight = 13
   object BtnTime2: TSpeedButton
-    Left = 281
-    Top = 36
+    Left = 272
+    Top = 34
     Width = 13
-    Height = 23
+    Height = 22
     Caption = '?'
     Flat = True
     OnClick = BtnTime2Click
   end
   object BtnTime1: TSpeedButton
-    Left = 281
-    Top = 10
+    Left = 272
+    Top = 8
     Width = 13
-    Height = 23
+    Height = 22
     Caption = '?'
     Flat = True
     OnClick = BtnTime1Click
   end
   object BtnCancel: TButton
-    Left = 207
-    Top = 87
-    Width = 87
+    Left = 196
+    Top = 85
+    Width = 75
     Height = 29
     Caption = '&Cancel'
     ModalResult = 2
     TabOrder = 1
   end
   object BtnOk: TButton
-    Left = 117
-    Top = 87
-    Width = 87
+    Left = 118
+    Top = 85
+    Width = 75
     Height = 29
     Caption = '&OK'
     ModalResult = 1
@@ -88,7 +88,6 @@ object SpanDialog: TSpanDialog
     Height = 21
     TabOrder = 8
     Text = '2001/01/01'
-    OnKeyDown = TimeY2KeyDown
   end
   object TimeY1: TEdit
     Left = 118
@@ -97,13 +96,12 @@ object SpanDialog: TSpanDialog
     Height = 21
     TabOrder = 3
     Text = '2000/01/01'
-    OnKeyDown = TimeY1KeyDown
   end
   object TimeY1UD: TUpDown
     Left = 182
-    Top = 9
-    Width = 21
-    Height = 23
+    Top = 10
+    Width = 17
+    Height = 20
     Min = -32000
     Max = 32000
     TabOrder = 4
@@ -112,9 +110,9 @@ object SpanDialog: TSpanDialog
   end
   object TimeY2UD: TUpDown
     Left = 182
-    Top = 35
-    Width = 21
-    Height = 23
+    Top = 36
+    Width = 17
+    Height = 20
     Min = -32000
     Max = 32000
     TabOrder = 9
@@ -122,28 +120,26 @@ object SpanDialog: TSpanDialog
     OnChangingEx = TimeY2UDChangingEx
   end
   object TimeH2: TEdit
-    Left = 207
+    Left = 202
     Top = 36
     Width = 51
     Height = 21
     TabOrder = 10
     Text = '23:59:59'
-    OnKeyDown = TimeH2KeyDown
   end
   object TimeH1: TEdit
-    Left = 207
+    Left = 202
     Top = 10
     Width = 51
     Height = 21
     TabOrder = 5
     Text = '00:00:00'
-    OnKeyDown = TimeH1KeyDown
   end
   object TimeH1UD: TUpDown
-    Left = 259
-    Top = 9
-    Width = 21
-    Height = 23
+    Left = 254
+    Top = 10
+    Width = 17
+    Height = 20
     Min = -32000
     Max = 32000
     TabOrder = 6
@@ -151,10 +147,10 @@ object SpanDialog: TSpanDialog
     OnChangingEx = TimeH1UDChangingEx
   end
   object TimeH2UD: TUpDown
-    Left = 259
-    Top = 35
-    Width = 21
-    Height = 23
+    Left = 254
+    Top = 36
+    Width = 17
+    Height = 20
     Min = -32000
     Max = 32000
     TabOrder = 11
@@ -164,7 +160,7 @@ object SpanDialog: TSpanDialog
   object EditTimeInt: TComboBox
     Left = 118
     Top = 62
-    Width = 85
+    Width = 83
     Height = 21
     DropDownCount = 16
     TabOrder = 13

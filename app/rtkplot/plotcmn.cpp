@@ -144,7 +144,6 @@ TIMEPOS * __fastcall TPlot::SolToPos(solbuf_t *sol, int index, int qflag, int ty
         
         PosToXyz(data->time,data->rr,data->type,xyz);
         CovToXyz(data->rr,data->qr,data->type,xyzs);
-        if (xyz[2]<-RE_WGS84) continue;
         
         pos->t  [pos->n]=data->time;
         pos->x  [pos->n]=xyz [0];
@@ -403,7 +402,6 @@ int __fastcall TPlot::SearchPos(int x, int y)
         if (QFlag->ItemIndex&&data->stat!=QFlag->ItemIndex) continue;
         
         PosToXyz(data->time,data->rr,data->type,xyz);
-        if (xyz[2]<-RE_WGS84) continue;
         
         if (SQR(xp-xyz[0])+SQR(yp-xyz[1])<=SQR(r)) return i;
     }

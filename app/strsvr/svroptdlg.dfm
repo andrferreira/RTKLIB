@@ -4,7 +4,7 @@ object SvrOptDialog: TSvrOptDialog
   BorderIcons = []
   BorderStyle = bsDialog
   Caption = 'Options'
-  ClientHeight = 327
+  ClientHeight = 328
   ClientWidth = 435
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -19,14 +19,14 @@ object SvrOptDialog: TSvrOptDialog
   TextHeight = 13
   object Label15: TLabel
     Left = 9
-    Top = 276
+    Top = 279
     Width = 36
     Height = 13
     Caption = 'Log File'
   end
   object Label14: TLabel
     Left = 9
-    Top = 254
+    Top = 256
     Width = 95
     Height = 13
     Caption = 'NTRIP Source Table'
@@ -123,8 +123,8 @@ object SvrOptDialog: TSvrOptDialog
     Caption = 'Receiver Info'
   end
   object BtnOk: TButton
-    Left = 232
-    Top = 296
+    Left = 228
+    Top = 297
     Width = 95
     Height = 29
     Caption = '&OK'
@@ -133,8 +133,8 @@ object SvrOptDialog: TSvrOptDialog
     OnClick = BtnOkClick
   end
   object BtnCancel: TButton
-    Left = 331
-    Top = 296
+    Left = 330
+    Top = 297
     Width = 95
     Height = 29
     Caption = '&Cancel'
@@ -174,7 +174,7 @@ object SvrOptDialog: TSvrOptDialog
     Text = '2000'
   end
   object AvePeriodRate: TEdit
-    Left = 340
+    Left = 341
     Top = 7
     Width = 85
     Height = 21
@@ -182,7 +182,7 @@ object SvrOptDialog: TSvrOptDialog
     Text = '1000'
   end
   object TraceLevelS: TComboBox
-    Left = 340
+    Left = 341
     Top = 51
     Width = 85
     Height = 21
@@ -201,7 +201,7 @@ object SvrOptDialog: TSvrOptDialog
   object AntPos2: TEdit
     Left = 205
     Top = 118
-    Width = 97
+    Width = 96
     Height = 21
     TabOrder = 14
     Text = '0.000'
@@ -215,7 +215,7 @@ object SvrOptDialog: TSvrOptDialog
     Text = '0.000'
   end
   object NmeaCycle: TEdit
-    Left = 340
+    Left = 341
     Top = 73
     Width = 85
     Height = 21
@@ -232,9 +232,9 @@ object SvrOptDialog: TSvrOptDialog
   end
   object BtnPos: TButton
     Left = 401
-    Top = 118
+    Top = 117
     Width = 25
-    Height = 21
+    Height = 23
     Caption = '...'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -257,15 +257,15 @@ object SvrOptDialog: TSvrOptDialog
   object LocalDir: TEdit
     Left = 108
     Top = 206
-    Width = 292
+    Width = 291
     Height = 21
     TabOrder = 22
   end
   object BtnLocalDir: TButton
     Left = 401
-    Top = 206
+    Top = 205
     Width = 25
-    Height = 21
+    Height = 23
     Caption = '...'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -277,7 +277,7 @@ object SvrOptDialog: TSvrOptDialog
     OnClick = BtnLocalDirClick
   end
   object FileSwapMarginE: TEdit
-    Left = 340
+    Left = 341
     Top = 29
     Width = 85
     Height = 21
@@ -316,7 +316,7 @@ object SvrOptDialog: TSvrOptDialog
   object AntOff2: TEdit
     Left = 205
     Top = 140
-    Width = 97
+    Width = 96
     Height = 21
     TabOrder = 18
     Text = '0.000'
@@ -348,16 +348,16 @@ object SvrOptDialog: TSvrOptDialog
   end
   object SrcTblFileF: TEdit
     Left = 108
-    Top = 250
-    Width = 292
+    Top = 252
+    Width = 291
     Height = 21
     TabOrder = 25
   end
   object BtnSrcTblFile: TButton
     Left = 401
-    Top = 250
+    Top = 251
     Width = 25
-    Height = 21
+    Height = 23
     Caption = '...'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -370,16 +370,16 @@ object SvrOptDialog: TSvrOptDialog
   end
   object LogFileF: TEdit
     Left = 108
-    Top = 272
-    Width = 292
+    Top = 275
+    Width = 291
     Height = 21
     TabOrder = 27
   end
   object BtnLogFile: TButton
     Left = 401
-    Top = 272
+    Top = 274
     Width = 25
-    Height = 21
+    Height = 23
     Caption = '...'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

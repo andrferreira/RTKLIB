@@ -4,7 +4,7 @@ object OutputStrDialog: TOutputStrDialog
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Output Streams'
-  ClientHeight = 156
+  ClientHeight = 155
   ClientWidth = 390
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -108,7 +108,7 @@ object OutputStrDialog: TOutputStrDialog
       'Serial'
       'TCP Client'
       'TCP Server'
-      'NTRIP Server'
+      'NTRIP Serve'
       'NTRIP Caster'
       'File')
   end
@@ -129,7 +129,7 @@ object OutputStrDialog: TOutputStrDialog
   end
   object BtnStr2: TButton
     Left = 237
-    Top = 40
+    Top = 39
     Width = 25
     Height = 23
     Caption = '...'
@@ -144,11 +144,13 @@ object OutputStrDialog: TOutputStrDialog
   end
   object Stream2: TComboBox
     Left = 133
-    Top = 41
+    Top = 40
     Width = 103
     Height = 21
     Style = csDropDownList
+    ItemIndex = 0
     TabOrder = 7
+    Text = 'Serial'
     OnChange = Stream2Change
     Items.Strings = (
       'Serial'
@@ -176,7 +178,7 @@ object OutputStrDialog: TOutputStrDialog
   end
   object Format2: TComboBox
     Left = 278
-    Top = 41
+    Top = 40
     Width = 107
     Height = 21
     Style = csDropDownList
@@ -251,7 +253,7 @@ object OutputStrDialog: TOutputStrDialog
   end
   object Stream2C: TCheckBox
     Left = 8
-    Top = 43
+    Top = 42
     Width = 120
     Height = 17
     Caption = '(5) Solution 2'

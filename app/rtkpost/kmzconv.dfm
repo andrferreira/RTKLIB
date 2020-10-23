@@ -4,7 +4,7 @@ object ConvDialog: TConvDialog
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'KML/GPX Converter'
-  ClientHeight = 291
+  ClientHeight = 290
   ClientWidth = 395
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -232,7 +232,7 @@ object ConvDialog: TConvDialog
       OnClick = TimeSpanClick
     end
     object TimeY2: TEdit
-      Left = 235
+      Left = 234
       Top = 32
       Width = 63
       Height = 21
@@ -240,7 +240,7 @@ object ConvDialog: TConvDialog
       Text = '2000/01/01'
     end
     object TimeH2: TEdit
-      Left = 318
+      Left = 317
       Top = 32
       Width = 51
       Height = 21
@@ -281,7 +281,7 @@ object ConvDialog: TConvDialog
       OnChange = InputFileChange
     end
     object BtnInputFile: TButton
-      Left = 364
+      Left = 363
       Top = 149
       Width = 25
       Height = 21
@@ -327,7 +327,7 @@ object ConvDialog: TConvDialog
       OnChangingEx = TimeH1UDChangingEx
     end
     object TimeY2UD: TUpDown
-      Left = 298
+      Left = 297
       Top = 31
       Width = 19
       Height = 23
@@ -338,7 +338,7 @@ object ConvDialog: TConvDialog
       OnChangingEx = TimeY2UDChangingEx
     end
     object TimeH2UD: TUpDown
-      Left = 369
+      Left = 368
       Top = 31
       Width = 19
       Height = 23
@@ -366,7 +366,7 @@ object ConvDialog: TConvDialog
       OnChange = GoogleEarthFileChange
     end
     object BtnGoogleEarthFile: TButton
-      Left = 364
+      Left = 363
       Top = 214
       Width = 25
       Height = 21
@@ -402,7 +402,7 @@ object ConvDialog: TConvDialog
     end
   end
   object BtnGoogle: TButton
-    Left = 97
+    Left = 95
     Top = 262
     Width = 89
     Height = 27
@@ -411,7 +411,7 @@ object ConvDialog: TConvDialog
     OnClick = BtnGoogleClick
   end
   object BtnView: TBitBtn
-    Left = 7
+    Left = 6
     Top = 262
     Width = 89
     Height = 27
