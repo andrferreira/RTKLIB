@@ -228,8 +228,6 @@ __published:
 	TEdit *MaxAveEp;
 	TCheckBox *ChkInitRestart;
 	TCheckBox *NavSys7;
-	TComboBox *OutputSingle;
-	TEdit *MaxSolStd;
 	void __fastcall BtnOkClick(TObject *Sender);
 	void __fastcall RovAntPcvClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);

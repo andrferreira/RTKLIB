@@ -4,7 +4,7 @@ object Plot: TPlot
   Caption = 'RTKPLOT'
   ClientHeight = 485
   ClientWidth = 633
-  Color = clWindow
+  Color = clBtnFace
   Constraints.MinHeight = 150
   Constraints.MinWidth = 150
   Font.Charset = ANSI_CHARSET
@@ -63,8 +63,6 @@ object Plot: TPlot
     Height = 18
     Align = alBottom
     BevelOuter = bvNone
-    Color = clWindow
-    ParentBackground = False
     TabOrder = 0
     object BtnMessage2: TSpeedButton
       Left = 617
@@ -231,8 +229,6 @@ object Plot: TPlot
     Margins.Bottom = 1
     Align = alTop
     BevelOuter = bvNone
-    Color = clWindow
-    ParentBackground = False
     TabOrder = 1
     object Panel11: TPanel
       Left = 567

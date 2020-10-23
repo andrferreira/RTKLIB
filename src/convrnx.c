@@ -529,62 +529,49 @@ static int scan_obstype(int format, const char *file, rnxopt_t *opt,
 /* set observation types -----------------------------------------------------*/
 static void set_obstype(int format, rnxopt_t *opt)
 {
-    /* default supported codes for {GPS,GLO,GAL,QZS,SBS,CMP,IRN} */
-    const unsigned char codes_rtcm2[7][8]={ /* rtcm2 */
+    /* supported codes by rtcm2 */
+    const unsigned char codes_rtcm2[7][8]={
         {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P},
-        {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P},
-        {0},
-        {0},
-        {0},
-        {0},
-        {0}
+        {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P}
     };
-    const unsigned char codes_rtcm3[7][8]={ /* rtcm3 */
+    /* supported codes by rtcm3 */
+    const unsigned char codes_rtcm3[7][8]={
         {CODE_L1C,CODE_L1W,CODE_L2W,CODE_L2X,CODE_L5X},
         {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P},
         {CODE_L1X,CODE_L5X,CODE_L7X,CODE_L8X},
         {CODE_L1C,CODE_L2X,CODE_L5X},
         {CODE_L1C,CODE_L5X},
-        {CODE_L1I,CODE_L7I},
-        {0}
+        {CODE_L1C,CODE_L2C,CODE_L7I},{0}
     };
-    const unsigned char codes_oem3[7][8]={ /* novatel oem3 */
-        {CODE_L1C,CODE_L2P},
-        {0},
-        {0},
-        {0},
-        {CODE_L1C},
-        {0},
-        {0}
+    /* supported codes by novatel oem3 */
+    const unsigned char codes_oem3[7][8]={
+        {CODE_L1C,CODE_L2P},{0},{0},{0},{CODE_L1C}
     };
-    const unsigned char codes_oem4[7][8]={ /* novatel oem6 */
-        {CODE_L1C,CODE_L1P,CODE_L2D,CODE_L2X,CODE_L5Q},
+    /* supported codes by novatel oem4 */
+    const unsigned char codes_oem4[7][8]={
+        {CODE_L1C,CODE_L2P,CODE_L2D,CODE_L2X,CODE_L5Q},
         {CODE_L1C,CODE_L2C,CODE_L2P},
         {CODE_L1B,CODE_L1C,CODE_L5Q,CODE_L7Q,CODE_L8Q},
         {CODE_L1C,CODE_L2X,CODE_L5Q},
-        {CODE_L1C,CODE_L5I},
-        {CODE_L1I,CODE_L7I},
-        {0}
+        {CODE_L1C,CODE_L5I},{0}
     };
-    const unsigned char codes_cres[7][8]={ /* hemisphere */
+    /* supported codes by hemisphere */
+    const unsigned char codes_cres[7][8]={
         {CODE_L1C,CODE_L2P},
         {CODE_L1C,CODE_L2P},
-        {0},
-        {0},
-        {CODE_L1C},
-        {0},
-        {0}
+        {0},{0},{CODE_L1C},{0}
     };
-    const unsigned char codes_javad[7][8]={ /* javad */
+    /* supported codes by javad */
+    const unsigned char codes_javad[7][8]={
         {CODE_L1C,CODE_L1W,CODE_L1X,CODE_L2X,CODE_L2W,CODE_L5X},
         {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P},
-        {CODE_L1X,CODE_L5X,CODE_L7X,CODE_L8X,CODE_L6X},
-        {CODE_L1C,CODE_L1X,CODE_L1Z,CODE_L2X,CODE_L5X,CODE_L6X},
+        {CODE_L1X,CODE_L5X,CODE_L7X,CODE_L8X},
+        {CODE_L1C,CODE_L1X,CODE_L1Z,CODE_L2X,CODE_L5X},
         {CODE_L1C,CODE_L5X},
-        {CODE_L1I,CODE_L7I},
-        {0}
+        {CODE_L1I,CODE_L2C,CODE_L7I}
     };
-    const unsigned char codes_rinex[7][32]={ /* rinex and binex */
+    /* supported codes by rinex and binex */
+    const unsigned char codes_rinex[7][32]={
         {CODE_L1C,CODE_L1P,CODE_L1W,CODE_L1Y,CODE_L1M,CODE_L1N,CODE_L1S,CODE_L1L,
          CODE_L2C,CODE_L2D,CODE_L2S,CODE_L2L,CODE_L2X,CODE_L2P,CODE_L2W,CODE_L2Y,
          CODE_L2M,CODE_L2N,CODE_L5I,CODE_L5Q,CODE_L5X},
@@ -599,32 +586,18 @@ static void set_obstype(int format, rnxopt_t *opt)
          CODE_L6X},
         {CODE_L5A,CODE_L5B,CODE_L5C,CODE_L5X,CODE_L9A,CODE_L9B,CODE_L9C,CODE_L9X}
     };
-    const unsigned char codes_rt17[7][8]={ /* rt17 */
-        {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P,CODE_L2W},
-        {0},
-        {0},
-        {0},
-        {0},
-        {0},
-        {0},
+    /* supported codes by rt17 */
+    const unsigned char codes_rt17[7][8]={
+        {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P,CODE_L2W}
     };
-    const unsigned char codes_cmr[7][8]={ /* cmr */
+    /* supported codes by cmr */
+    const unsigned char codes_cmr[7][8]={
         {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P,CODE_L2W},
-        {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P},
-        {0},
-        {0},
-        {0},
-        {0},
-        {0},
+        {CODE_L1C,CODE_L1P,CODE_L2C,CODE_L2P}
     };
-    const unsigned char codes_other[7][8]={ /* others */
-        {CODE_L1C},
-        {CODE_L1C},
-        {CODE_L1C},
-        {CODE_L1C},
-        {CODE_L1C},
-        {CODE_L1I},
-        {0}
+    /* supported codes by others */
+    const unsigned char codes_other[7][8]={
+        {CODE_L1C},{CODE_L1C},{CODE_L1C},{CODE_L1C},{CODE_L1C},{CODE_L1I}
     };
     const unsigned char *codes;
     int i;

@@ -4,7 +4,6 @@ BINDIR  = /usr/local/bin
 SRC     = ../../../src
 
 OPTS    = -DTRACE -DENAGLO -DENAQZS -DENAGAL -DENACMP -DENAIRN -DNFREQ=3
-#OPTS    = -DENAGLO -DENAQZS -DENAGAL -DENACMP -DNFREQ=2
 
 # for no lapack
 CFLAGS  = -Wall -O3 -ansi -pedantic -Wno-unused-but-set-variable -I$(SRC) $(OPTS) -g
@@ -18,10 +17,9 @@ LDLIBS  = -lm -lrt
 #LDLIBS  = -lm -lrt -llapack -lblas -pg
 
 # for mkl
-##MKLDIR  = /opt/intel/mkl
-#MKLDIR  = /proj/madoca/lib/mkl
+#MKLDIR  = /opt/intel/mkl
 #CFLAGS  = -O3 -ansi -pedantic -Wno-unused-but-set-variable -I$(SRC) $(OPTS) -DMKL
-#LDLIBS  = -L$(MKLDIR)/intel64 -lmkl_intel_lp64 -lmkl_core -lmkl_gnu_thread -lpthread -lgomp -lm -lrt
+#LDLIBS  = -L$(MKLDIR)/lib/intel64 -lm -lrt -lmkl_core -lmkl_intel_lp64 -lmkl_gnu_thread -liomp5 -lpthread
 
 all        : rnx2rtkp
 rnx2rtkp   : rnx2rtkp.o rtkcmn.o rinex.o rtkpos.o postpos.o solution.o
