@@ -3,7 +3,7 @@ object ConvOptDialog: TConvOptDialog
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Options'
-  ClientHeight = 353
+  ClientHeight = 330
   ClientWidth = 421
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -17,18 +17,18 @@ object ConvOptDialog: TConvOptDialog
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel
-    Left = 153
-    Top = 329
+    Left = 149
+    Top = 307
     Width = 31
     Height = 13
     Caption = 'Debug'
   end
   object Label8: TLabel
-    Left = 8
+    Left = 4
     Top = 307
-    Width = 82
+    Width = 32
     Height = 13
-    Caption = 'Receiver Options'
+    Caption = 'Option'
   end
   object Label11: TLabel
     Left = 323
@@ -51,16 +51,9 @@ object ConvOptDialog: TConvOptDialog
     Height = 13
     Caption = 'Station ID'
   end
-  object Label13: TLabel
-    Left = 8
-    Top = 329
-    Width = 88
-    Height = 13
-    Caption = 'Time Torelance (s)'
-  end
   object BtnOk: TButton
-    Left = 257
-    Top = 323
+    Left = 256
+    Top = 299
     Width = 81
     Height = 29
     Caption = '&OK'
@@ -69,8 +62,8 @@ object ConvOptDialog: TConvOptDialog
     OnClick = BtnOkClick
   end
   object BtnCancel: TButton
-    Left = 339
-    Top = 323
+    Left = 338
+    Top = 299
     Width = 81
     Height = 29
     Cancel = True
@@ -377,8 +370,8 @@ object ConvOptDialog: TConvOptDialog
     end
   end
   object TraceLevel: TComboBox
-    Left = 190
-    Top = 326
+    Left = 183
+    Top = 303
     Width = 63
     Height = 21
     Style = csDropDownList
@@ -394,9 +387,9 @@ object ConvOptDialog: TConvOptDialog
       'Level 5')
   end
   object RcvOption: TEdit
-    Left = 102
-    Top = 300
-    Width = 316
+    Left = 38
+    Top = 303
+    Width = 103
     Height = 21
     TabOrder = 10
   end
@@ -499,7 +492,7 @@ object ConvOptDialog: TConvOptDialog
     Top = 5
     Width = 84
     Height = 17
-    Caption = 'RINEX2 Name'
+    Caption = 'RINEX Name'
     TabOrder = 5
     OnClick = RnxFileClick
   end
@@ -593,13 +586,5 @@ object ConvOptDialog: TConvOptDialog
     Height = 17
     Caption = 'Sep NAV'
     TabOrder = 3
-  end
-  object TimeTol: TEdit
-    Left = 102
-    Top = 325
-    Width = 45
-    Height = 21
-    TabOrder = 14
-    Text = '0.005'
   end
 end

@@ -81,8 +81,6 @@ __published:
 	TCheckBox *ScanObs;
 	TCheckBox *HalfCyc;
 	TCheckBox *ChkSepNav;
-	TLabel *Label13;
-	TEdit *TimeTol;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall BtnOkClick(TObject *Sender);
 	void __fastcall RnxFileClick(TObject *Sender);

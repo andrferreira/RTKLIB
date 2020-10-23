@@ -878,8 +878,7 @@ void __fastcall TOptDialog::UpdateEnable(void)
 	
 	Freq           ->Enabled=rel||ppp;
 	Solution       ->Enabled=rel||ppp;
-	DynamicModel   ->Enabled=PosMode->ItemIndex==PMODE_KINEMA||
-	                         PosMode->ItemIndex==PMODE_PPP_KINEMA;
+	DynamicModel   ->Enabled=rel;
 	TideCorr       ->Enabled=rel||ppp;
 	//IonoOpt        ->Enabled=!ppp;
 	PosOpt1        ->Enabled=ppp;
