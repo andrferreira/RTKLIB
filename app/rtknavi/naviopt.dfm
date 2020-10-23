@@ -62,6 +62,10 @@ object OptDialog: TOptDialog
     TabOrder = 4
     object TabSheet1: TTabSheet
       Caption = 'Setting&1'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 231
       object Label3: TLabel
         Left = 24
         Top = 73
@@ -402,6 +406,10 @@ object OptDialog: TOptDialog
     object TabSheet2: TTabSheet
       Caption = 'Setting&2'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 231
       object Label25: TLabel
         Left = 24
         Top = 7
@@ -665,6 +673,10 @@ object OptDialog: TOptDialog
     object TabSheet3: TTabSheet
       Caption = 'O&utput'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 231
       object LabelSolFormat: TLabel
         Left = 24
         Top = 7
@@ -1134,6 +1146,10 @@ object OptDialog: TOptDialog
     object TabSheet5: TTabSheet
       Caption = '&Positions'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 231
       object Label4: TLabel
         Left = 12
         Top = 12
@@ -1792,6 +1808,10 @@ object OptDialog: TOptDialog
     object TabSheet8: TTabSheet
       Caption = '&Misc'
       ImageIndex = 6
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 231
       object Label19: TLabel
         Left = 32
         Top = 7
@@ -1997,7 +2017,7 @@ object OptDialog: TOptDialog
         Left = 148
         Top = 139
         Width = 234
-        Height = 21
+        Height = 23
         TabOrder = 11
       end
       object TLEFile: TEdit

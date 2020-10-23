@@ -62,7 +62,6 @@ void __fastcall TStrMonDialog::SelFmtChange(TObject *Sender)
 		init_raw(&raw,StrFmt-2);
 		raw.outtype=1;
 	}
-	Console->Invalidate();
 }
 //---------------------------------------------------------------------------
 void __fastcall TStrMonDialog::AddMsg(unsigned char *msg, int len)
@@ -139,7 +138,7 @@ void __fastcall TStrMonDialog::AddConsole(unsigned char *msg, int n, int mode)
 		}
 	}
 	ConBuff->Strings[ConBuff->Count-1]=buff;
-	Console->Invalidate();
+	StrMonDialog->Invalidate();
 }
 //---------------------------------------------------------------------------
 void __fastcall TStrMonDialog::ConsolePaint(TObject *Sender)

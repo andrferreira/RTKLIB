@@ -8,7 +8,6 @@
 #include <System.StartUpCopy.hpp>
 //---------------------------------------------------------------------------
 USEFORM("vplayermain.cpp", MainForm);
-USEFORM("vpoptdlg.cpp", VideoPlayerOptDialog);
 //---------------------------------------------------------------------------
 extern "C" int FMXmain()
 {
@@ -16,7 +15,6 @@ extern "C" int FMXmain()
 	{
 		Application->Initialize();
 		Application->CreateForm(__classid(TMainForm), &MainForm);
-		Application->CreateForm(__classid(TVideoPlayerOptDialog), &VideoPlayerOptDialog);
 		Application->Run();
 	}
 	catch (Exception &exception)

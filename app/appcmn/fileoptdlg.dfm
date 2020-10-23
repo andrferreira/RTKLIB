@@ -5,7 +5,7 @@ object FileOptDialog: TFileOptDialog
   BorderStyle = bsDialog
   Caption = 'File Options'
   ClientHeight = 77
-  ClientWidth = 399
+  ClientWidth = 384
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object FileOptDialog: TFileOptDialog
   PixelsPerInch = 96
   TextHeight = 13
   object Label2: TLabel
-    Left = 109
+    Left = 113
     Top = 54
     Width = 8
     Height = 13
@@ -26,7 +26,7 @@ object FileOptDialog: TFileOptDialog
     Visible = False
   end
   object Label3: TLabel
-    Left = 175
+    Left = 179
     Top = 54
     Width = 5
     Height = 13
@@ -57,7 +57,7 @@ object FileOptDialog: TFileOptDialog
     OnClick = BtnKeyClick
   end
   object TimeStart: TEdit
-    Left = 122
+    Left = 126
     Top = 50
     Width = 51
     Height = 21
@@ -68,12 +68,11 @@ object FileOptDialog: TFileOptDialog
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 399
+    Width = 384
     Height = 43
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitWidth = 384
     object Label1: TLabel
       Left = 8
       Top = 4
@@ -82,7 +81,7 @@ object FileOptDialog: TFileOptDialog
       Caption = 'File Path'
     end
     object BtnFilePath: TButton
-      Left = 372
+      Left = 356
       Top = 17
       Width = 25
       Height = 23
@@ -99,13 +98,13 @@ object FileOptDialog: TFileOptDialog
     object FilePath: TEdit
       Left = 6
       Top = 18
-      Width = 365
+      Width = 349
       Height = 21
       TabOrder = 1
     end
   end
   object BtnCancel: TButton
-    Left = 316
+    Left = 300
     Top = 45
     Width = 81
     Height = 29
@@ -114,7 +113,7 @@ object FileOptDialog: TFileOptDialog
     TabOrder = 0
   end
   object BtnOk: TButton
-    Left = 232
+    Left = 216
     Top = 45
     Width = 81
     Height = 29
@@ -167,14 +166,6 @@ object FileOptDialog: TFileOptDialog
       '6'
       '12'
       '24')
-  end
-  object Chk64Bit: TCheckBox
-    Left = 186
-    Top = 52
-    Width = 41
-    Height = 17
-    Caption = '64bit'
-    TabOrder = 7
   end
   object SaveDialog: TSaveDialog
     Filter = 'All File (*.*)|*.*|Position File (*.pos)|*.pos'

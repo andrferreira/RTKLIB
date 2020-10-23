@@ -100,14 +100,6 @@ __published:
 	TBitBtn *BtnPlot;
 	TBitBtn *BtnPost;
 	TBitBtn *BtnExit;
-	TCheckBox *OutFileEna8;
-	TEdit *OutFile8;
-	TSpeedButton *BtnOutFileView8;
-	TButton *BtnOutFile8;
-	TCheckBox *OutFileEna9;
-	TEdit *OutFile9;
-	TSpeedButton *BtnOutFileView9;
-	TButton *BtnOutFile9;
 	
 	void __fastcall FormCreate          (TObject *Sender);
 	void __fastcall FormShow            (TObject *Sender);
@@ -133,7 +125,16 @@ __published:
 	void __fastcall TimeStartFClick     (TObject *Sender);
 	void __fastcall TimeEndFClick       (TObject *Sender);
 	void __fastcall TimeIntFClick       (TObject *Sender);
-	void __fastcall OutDirEnaClick      (TObject *Sender);
+	void __fastcall OutDirEnaClick     (TObject *Sender);
+	
+	void __fastcall TimeY1UDChangingEx  (TObject *Sender, bool &AllowChange,
+          short NewValue, TUpDownDirection Direction);
+	void __fastcall TimeH1UDChangingEx  (TObject *Sender, bool &AllowChange,
+          short NewValue, TUpDownDirection Direction);
+	void __fastcall TimeY2UDChangingEx  (TObject *Sender, bool &AllowChange,
+          short NewValue, TUpDownDirection Direction);
+	void __fastcall TimeH2UDChangingEx  (TObject *Sender, bool &AllowChange,
+          short NewValue, TUpDownDirection Direction);
 	void __fastcall InFileChange(TObject *Sender);
 	void __fastcall BtnOutFileView5Click(TObject *Sender);
 	void __fastcall BtnOutFile5Click(TObject *Sender);
@@ -154,18 +155,6 @@ __published:
 	void __fastcall TimeH1KeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
 	void __fastcall TimeY2KeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
 	void __fastcall TimeH2KeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
-	void __fastcall BtnOutFile8Click(TObject *Sender);
-	void __fastcall BtnOutFile9Click(TObject *Sender);
-	void __fastcall BtnOutFileView8Click(TObject *Sender);
-	void __fastcall BtnOutFileView9Click(TObject *Sender);
-	void __fastcall TimeY1UDChangingEx(TObject *Sender, bool &AllowChange, int NewValue,
-          TUpDownDirection Direction);
-	void __fastcall TimeH1UDChangingEx(TObject *Sender, bool &AllowChange, int NewValue,
-          TUpDownDirection Direction);
-	void __fastcall TimeY2UDChangingEx(TObject *Sender, bool &AllowChange, int NewValue,
-          TUpDownDirection Direction);
-	void __fastcall TimeH2UDChangingEx(TObject *Sender, bool &AllowChange, int NewValue,
-          TUpDownDirection Direction);
 	
 private:
 	AnsiString IniFile,CmdPostExe;
@@ -199,7 +188,7 @@ public:
 	AnsiString CodeMask[7];
 	double AppPos[3],AntDel[3];
 	int RnxVer,RnxFile,NavSys,ObsType,FreqType,TraceLevel,EventEna;
-	int AutoPos,ScanObs,HalfCyc,OutIono,OutTime,OutLeaps,SepNav;
+	int AutoPos,ScanObs,HalfCyc,OutIono,OutTime,OutLeaps;
 	
 	__fastcall TMainWindow(TComponent* Owner);
 };

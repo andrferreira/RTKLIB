@@ -57,12 +57,6 @@ __published:
 	TButton *BtnRcvOpt3;
 	TLabel *Label1;
 	TEdit *NmeaPos3;
-	TEdit *EditResetCmd;
-	TLabel *LabelResetCmd;
-	TEdit *EditMaxBL;
-	TLabel *LabelMaxBL;
-	TLabel *LabelKm;
-	TCheckBox *Chk64Bit;
 	void __fastcall BtnOkClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall BtnStr1Click(TObject *Sender);
@@ -95,10 +89,10 @@ private:
 	void __fastcall UpdateEnable(void);
 public:
 	int StreamC[3],Stream[3],Format[3],CmdEna[3][3],CmdEnaTcp[3][3];
-	int NmeaReq,TimeTag,Time64Bit,NRcv;
-	double NmeaPos[3],MaxBL;
+	int NmeaReq,TimeTag,NRcv;
+	double NmeaPos[3];
 	AnsiString Paths[3][4],Cmds[3][3],CmdsTcp[3][3],TimeStart,TimeSpeed;
-	AnsiString RcvOpt[3],ResetCmd;
+	AnsiString RcvOpt[3];
 	AnsiString History[10],MntpHist[10];
 	__fastcall TInputStrDialog(TComponent* Owner);
 };
